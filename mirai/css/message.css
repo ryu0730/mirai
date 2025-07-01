@@ -1,0 +1,81 @@
+/* message.css */
+
+/* コンテンツ全体を中央寄せ */
+.content {
+    width: 90%;
+    max-width: 1140px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+/* メッセージカードのスタイル */
+.message-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 80px;
+    padding: 80px; /* パディングを増やしてカードに余裕を持たせる */
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    min-height: 300px; /* カードの最低高さを設定 */
+    opacity: 0; /* 初期状態で透明 */
+    transform: translateY(50px); /* 初期状態で下にずらす */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* トランジションの設定 */
+}
+
+.message-card.visible {
+    opacity: 1; /* スクロール時に表示 */
+    transform: translateY(0); /* 元の位置に移動 */
+}
+
+.black-square-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-right: 40px; /* 黒丸と本文の間に空白を追加 */
+}
+
+.black-square {
+    width: 200px; /* サイズを大きくする */
+    height: 200px; /* サイズを大きくする */
+    background-color: black;
+    border-radius: 50%;
+}
+
+.role-name {
+    text-align: center;
+}
+
+.role-name h2 {
+    font-size: 1rem; /* 役職のフォントサイズを小さくする */
+    color: #2c3e50;
+    margin: 5px 0;
+    font-weight: normal; /* 文字を薄くする */
+}
+
+.role-name h3 {
+    font-size: 2.0rem; /* 名前のフォントサイズを大きくする */
+    color: #1a2930; /* フォントカラーを濃くする */
+    margin: 0;
+    font-weight: bold;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.message-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #2c3e50;
+}
+
+.message-content strong {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #2c3e50;
+}
+

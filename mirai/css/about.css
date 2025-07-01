@@ -1,0 +1,146 @@
+/* about.css */
+
+/* コンテンツ全体を中央寄せ */
+.content {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+/* タイトルのスタイル */
+.about-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    border-bottom: 2px solid rgba(44, 62, 80, 0.1);
+    padding-bottom: 10px;
+    /* background-color: #128f76; */
+}
+
+/* 段落のスタイル */
+.about p {
+    font-size: 1.07rem;
+    line-height: 1.8;
+    margin: 30px 0;
+    /* background-color: aqua; */
+    color: #2c3e50;
+    color: black;
+}
+
+.about-image {
+    width: 100%;
+    height: 300px; /* 高さを指定 */
+    overflow: hidden; /* スクロールバーを非表示にする */
+    white-space: nowrap; /* 画像を横一列に並べる */
+    margin-top: 20px; /* 上部に余白を追加 */
+    position: relative;
+}
+
+.scroll-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.image-box {
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    border-radius: 15px;
+    margin-right: 40px; /* 画像間の余白 */
+    flex-shrink: 0;
+}
+
+/* 特徴部分のスタイル */
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    /* border-bottom: 2px solid #eee; */
+    border-bottom: 2px solid rgba(44, 62, 80, 0.1);
+    padding-bottom: 20px;
+}
+
+/* スライドアニメーション用の初期スタイル */
+.feature-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    transform: translateX(-100%); /* 初期状態で左に隠す */
+    opacity: 0; /* 初期状態で透明 */
+    transition: transform 2.0s ease-out, opacity 1.5s ease-out; /* トランジションの時間を長くする */
+}
+
+/* スクロール時に表示 */
+.feature-number.visible {
+    transform: translateX(0); /* 元の位置に移動 */
+    opacity: 1; /* 不透明にする */
+}
+
+.features-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 80px;
+    /* border-bottom: 2px solid #18bc9c; */
+    /* margin: 120px; */
+}
+
+.feature-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 70px; /* 左右に空白を追加 */
+}
+
+
+/* 画像とテキストを交互に配置 */
+.feature:nth-child(odd) .feature-content {
+    flex-direction: row;
+}
+
+.feature:nth-child(even) .feature-content {
+    flex-direction: row-reverse;
+}
+
+.feature-image {
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    margin: 0 30px; /* 左右の余白を追加 */
+}
+
+
+.feature-content p {
+    flex: 1;
+    font-size: 1.07rem; /* 文字の大きさを少し小さくする */
+    line-height: 1.8; /* 行間を広げる */
+    color: #2c3e50;
+    color: black;
+    margin: 10px auto; /* 上下の余白を追加 */
+    max-height: 500px; /* 画像の縦幅より少し小さくする */
+    overflow: hidden; /* テキストがはみ出ないようにする */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* テキストを中央寄せ */
+    background-color: rgba(44, 62, 80, 0.1); /* フォントカラーを透明にした色 */
+    border-radius: 15px; /* 角を丸める */
+    padding: 20px; /* 内側にスペースを追加 */
+}
+
+/* 「猿払村未来塾とは」と特徴部分の間に空白を追加 */
+.about {
+    margin-bottom: 150px; /* 空白を追加 */
+}

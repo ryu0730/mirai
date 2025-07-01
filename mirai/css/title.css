@@ -1,0 +1,22 @@
+.title {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    margin-top: 100px; /* ヘッダーの高さ分のスペースを確保 */
+    /* background-color: aqua; */
+}
+
+.title_design {
+    margin: 0 auto;
+    text-align: center;
+    width: 25%;
+    /* background-color: blue; */
+}
+
+.ja_title {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 35px;
+    border-bottom: solid 1px black;
+    /* background-color: aqua; */
+}

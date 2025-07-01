@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猿払村未来塾 講師紹介</title>
+
+    <!-- CSSの読み込み -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/title.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/introduction.css">
+
+</head>
+
+<body>
+    <header class="page_header">
+        <div class="header_contents">
+            <a class="page_logo" href="index.html">猿払未来塾</a>
+            <nav class="header_nav">
+                <ul class="header_nav_lists">
+                    <li><a class="nav_link" href="message.html">メッセージ</a></li>
+                    <li><a class="nav_link" href="about.html">塾について</a></li>
+                    <li><a class="nav_link" href="introduction.html">講師紹介</a></li>
+                    <li><a class="nav_link" href="everyone.html">塾生・保護者の皆さん</a></li>
+                    <li><a class="nav_link" href="voice.html">卒業生の声</a></li>
+                    <li><a class="nav_link" href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="title">
+            <div class="title_design">
+                <p class="ja_title">講師紹介</p>
+                <p class="en_title">introduction</p>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="instructors">
+                <!-- 講師カード -->
+                <div class="instructor-card" data-name="講師 A" data-university="〇〇大学">
+                    <p>講師 A</p>
+                    <p>〇〇大学</p>
+                </div>
+                <div class="instructor-card" data-name="講師 A" data-university="〇〇大学">
+                    <p>講師 A</p>
+                    <p>〇〇大学</p>
+                </div>
+                <div class="instructor-card" data-name="講師 A" data-university="〇〇大学">
+                    <p>講師 A</p>
+                    <p>〇〇大学</p>
+                </div>
+                <div class="instructor-card" data-name="講師 A" data-university="〇〇大学">
+                    <p>講師 A</p>
+                    <p>〇〇大学</p>
+                </div>
+                <div class="instructor-card" data-name="講師 A" data-university="〇〇大学">
+                    <p>講師 A</p>
+                    <p>〇〇大学</p>
+                </div>
+                <div class="instructor-card" data-name="講師 A" data-university="〇〇大学">
+                    <p>講師 A</p>
+                    <p>〇〇大学</p>
+                </div>
+                <!-- More lecturer cards -->
+            </div>
+        </section>
+    </main>
+
+    <!-- モーダルウィンドウ -->
+    <div class="modal-container" id="modal-container">
+        <div class="modal-content">
+            <span class="close-button">&times;</span> <!-- バツ印の追加 -->
+            <div class="left-content">
+                <h2 id="lecturer-name">名前</h2>
+                <table id="lecturer-history" class="history-table">
+                    <!-- 経歴がここに表示されます -->
+                </table>
+                <div class="topic">
+                    <h3>01. 大学で学んでいること</h3>
+                    <p id="lecturer-study">A. 内容...</p>
+                </div>
+                <div class="topic">
+                    <h3>02. 休日の過ごし方</h3>
+                    <p id="lecturer-leisure">A. 内容...</p>
+                </div>
+                <div class="topic">
+                    <h3>03. 自慢できること</h3>
+                    <p id="lecturer-proud">A. 内容...</p>
+                </div>
+                <div class="topic">
+                    <h3>04. みんなに一言</h3>
+                    <p id="lecturer-message">A. 内容...</p>
+                </div>
+            </div>
+            <div class="right-content">
+                <img id="lecturer-photo1" src="path/to/photo1.jpg" alt="講師写真1">
+                <img id="lecturer-photo2" src="path/to/photo2.jpg" alt="講師写真2">
+                <img id="lecturer-photo3" src="path/to/photo3.jpg" alt="講師写真3">
+            </div>
+            <button class="next-button">次へ &rarr;</button> <!-- 次へ進むボタンの追加 -->
+        </div>
+    </div>
+    
+
+    <footer>
+        <div class="footer_content">
+            <p>猿払村教育委員会</p>
+            <p>〒098-6232 北海道宗谷郡猿払村鬼志別西町172番地1</p>
+            <p>TEL: 01635-2-3011</p>
+            <p>FAX: 01635-2-2225</p>
+            <p>Mail: <a href="mailto:kodomomirai@sarufutsu.lg.jp">kodomomirai@sarufutsu.lg.jp</a></p>
+        </div>
+    </footer>
+
+    <script src="js/introduction.js"></script>
+</body>
+
+</html>
