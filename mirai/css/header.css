@@ -6,17 +6,10 @@
     top: 0;
     z-index: 999;
     transition: background-color 0.3s, color 0.3s;
-}
-
-.page_header.transparent {
-    background-color: transparent;
-    color: white;
-}
-
-.page_header.solid {
-    background-color: white;
-    color: black;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    color: #222;
+    border-bottom: 1.5px solid #e0e0e0; /* 下に薄いグレーの線を追加 */
+    box-shadow: none; /* 影が不要なら追加 */
 }
 
 /* その他のスタイル */
