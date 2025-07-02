@@ -65,3 +65,44 @@
     height: 5px;
     margin: 4px 0;
 }
+
+/* 例: 768px以上は常にメニューを表示 */
+@media (min-width: 769px) {
+  .header_nav {
+    display: block !important;
+    position: static;
+    background: none;
+    width: auto;
+    height: auto;
+  }
+  .responsive_btn {
+    display: none;
+  }
+  .header_nav_lists {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+/* 例: 767px以下はハンバーガーメニュー */
+@media (max-width: 768px) {
+  .header_nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+  }
+  .header_nav.menu_active {
+    display: block;
+  }
+  .responsive_btn {
+    display: block;
+  }
+  .header_nav_lists {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
