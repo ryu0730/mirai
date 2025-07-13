@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://ryu0730.github.io/mirai/</loc>
+  <lastmod>2025-07-13T09:52:50+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ryu0730.github.io/mirai/index.html</loc>
+  <lastmod>2025-07-13T09:52:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ryu0730.github.io/mirai/message.html</loc>
+  <lastmod>2025-07-13T09:52:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ryu0730.github.io/mirai/about.html</loc>
+  <lastmod>2025-07-13T09:52:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ryu0730.github.io/mirai/introduction.html</loc>
+  <lastmod>2025-07-13T09:52:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ryu0730.github.io/mirai/everyone.html</loc>
+  <lastmod>2025-07-13T09:52:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ryu0730.github.io/mirai/voice.html</loc>
+  <lastmod>2025-07-13T09:52:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ryu0730.github.io/mirai/contact.html</loc>
+  <lastmod>2025-07-13T09:52:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
