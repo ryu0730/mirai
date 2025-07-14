@@ -79,3 +79,105 @@
     color: #2c3e50;
 }
 
+/* レスポンシブ対応 */
+@media screen and (max-width: 1024px) {
+    .content {
+        width: 95%;
+        margin: 60px auto;
+        padding: 15px;
+    }
+    
+    .message-card {
+        padding: 60px;
+        margin-bottom: 60px;
+    }
+    
+    .black-square {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .black-square-container {
+        margin-right: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        width: 100%;
+        margin: 40px auto;
+        padding: 10px;
+    }
+    
+    .message-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        margin-bottom: 40px;
+        min-height: auto;
+        text-align: center;
+    }
+    
+    .black-square-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .black-square {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .role-name h2 {
+        font-size: 0.9rem;
+    }
+    
+    .role-name h3 {
+        font-size: 1.6rem;
+    }
+    
+    .message-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        text-align: left;
+    }
+    
+    .message-content strong {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        margin: 30px auto;
+        padding: 5px;
+    }
+    
+    .message-card {
+        padding: 30px 15px;
+        margin-bottom: 30px;
+    }
+    
+    .black-square {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .role-name h2 {
+        font-size: 0.8rem;
+    }
+    
+    .role-name h3 {
+        font-size: 1.4rem;
+    }
+    
+    .message-content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .message-content strong {
+        font-size: 1.1rem;
+    }
+}
+

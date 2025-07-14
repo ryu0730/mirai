@@ -144,3 +144,151 @@
 .about {
     margin-bottom: 150px; /* 空白を追加 */
 }
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 1024px) {
+    .content {
+        width: 95%;
+        padding: 15px;
+        margin-top: 80px;
+    }
+    
+    .features-title {
+        font-size: 2rem;
+        margin-bottom: 60px;
+    }
+    
+    .feature-content {
+        padding: 0 30px;
+    }
+    
+    .feature-image {
+        width: 250px;
+        height: 250px;
+        margin: 0 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        width: 100%;
+        padding: 10px;
+        margin-top: 60px;
+    }
+    
+    .about-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .about p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 20px 0;
+    }
+    
+    .about-image {
+        height: 200px;
+    }
+    
+    .image-box {
+        width: 200px;
+        height: 200px;
+        margin-right: 20px;
+    }
+    
+    .features-title {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+    }
+    
+    .feature-number {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .feature-content {
+        flex-direction: column !important;
+        padding: 0 10px;
+        gap: 15px;
+    }
+    
+    .feature:nth-child(even) .feature-content {
+        flex-direction: column !important;
+    }
+    
+    .feature-image {
+        width: 100%;
+        max-width: 300px;
+        height: 200px;
+        margin: 0;
+    }
+    
+    .feature-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0;
+        padding: 15px;
+        max-height: none;
+    }
+    
+    .about {
+        margin-bottom: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        padding: 5px;
+        margin-top: 40px;
+    }
+    
+    .about-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .about p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 15px 0;
+    }
+    
+    .about-image {
+        height: 150px;
+    }
+    
+    .image-box {
+        width: 150px;
+        height: 150px;
+        margin-right: 15px;
+    }
+    
+    .features-title {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .feature-number {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .feature-content {
+        padding: 0 5px;
+    }
+    
+    .feature-image {
+        height: 150px;
+    }
+    
+    .feature-content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        padding: 10px;
+    }
+    
+    .about {
+        margin-bottom: 50px;
+    }
+}

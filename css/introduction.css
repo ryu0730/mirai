@@ -176,5 +176,176 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 画像の影を追加 */
 }
 
+/* レスポンシブ対応 */
+@media screen and (max-width: 1024px) {
+    .instructors {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .instructor-card {
+        padding: 15px;
+    }
+    
+    .modal-content {
+        width: 90%;
+        max-width: 900px;
+        padding: 15px;
+    }
+    
+    .left-content {
+        padding-right: 20px;
+    }
+    
+    .left-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .history-table th, .history-table td {
+        padding: 10px;
+        font-size: 1rem;
+    }
+    
+    .history-table th {
+        width: 120px;
+    }
+    
+    .topic h3 {
+        font-size: 1.2rem;
+    }
+    
+    .topic p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .instructors {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .instructor-card {
+        padding: 15px;
+        margin: 0 10px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        max-width: none;
+        max-height: 85%;
+        padding: 15px;
+        flex-direction: column;
+    }
+    
+    .left-content {
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+    
+    .left-content h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .history-table {
+        width: 100%;
+    }
+    
+    .history-table th, .history-table td {
+        padding: 8px;
+        font-size: 0.9rem;
+        display: block;
+        width: 100%;
+    }
+    
+    .history-table th {
+        width: 100%;
+        background-color: #f5f5f5;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    
+    .history-table td {
+        border-bottom: 1px solid #eee;
+        margin-bottom: 10px;
+    }
+    
+    .topic h3 {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    .topic p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .right-content {
+        gap: 10px;
+    }
+    
+    .close-button {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+    
+    .next-button {
+        width: 35px;
+        height: 35px;
+        margin: 20px auto 0 auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .instructor-card {
+        padding: 10px;
+        margin: 0 5px;
+    }
+    
+    .modal-container {
+        padding: 10px;
+    }
+    
+    .modal-content {
+        width: 100%;
+        max-height: 90%;
+        padding: 10px;
+    }
+    
+    .left-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    .history-table th, .history-table td {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+    
+    .topic h3 {
+        font-size: 1rem;
+    }
+    
+    .topic p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .close-button {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+    
+    .next-button {
+        width: 30px;
+        height: 30px;
+        margin: 15px auto 0 auto;
+    }
+}
+
 
 
