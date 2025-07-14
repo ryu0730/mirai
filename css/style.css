@@ -58,7 +58,7 @@ ul {
 
 /* サブビジュアル */
 
-.main_contants {
+.main_contents {
     text-align: center;
     line-height: 2.0;
 }
@@ -123,6 +123,109 @@ ul {
 
     .nav_link {
         font-size: 20px;
+    }
+}
+
+/* お知らせセクションのレスポンシブスタイル */
+.main_contents {
+    width: 100%;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+}
+
+.news_item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.news_item:last-child {
+    border-bottom: none;
+}
+
+.news_date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.news_text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    .main_title_design {
+        padding: 20px 15px;
+        width: 90%;
+    }
+    
+    .main_contents {
+        padding: 0 10px;
+    }
+    
+    .news_item {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .news_date {
+        font-size: 12px;
+    }
+    
+    .news_text {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .main_ja_title {
+        font-size: 24px;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main_title_design {
+        padding: 15px 10px;
+        width: 95%;
+    }
+    
+    .main_contents {
+        padding: 0 5px;
+    }
+    
+    .news_item {
+        padding: 8px;
+        margin-bottom: 12px;
+    }
+    
+    .news_date {
+        font-size: 11px;
+    }
+    
+    .news_text {
+        font-size: 13px;
+    }
+    
+    .main_ja_title {
+        font-size: 20px;
+        width: 60%;
+    }
+    
+    .heading {
+        font-size: 14px;
+    }
+    
+    .noto-sans-jp-fonts {
+        font-size: 40px;
     }
 }
 
