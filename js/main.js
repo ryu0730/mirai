@@ -9,7 +9,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function menuToggle() {
     const headerMenuDetail = document.querySelector('.header_nav');
+    const responsiveBtn = document.querySelector('.responsive_btn');
+    
     headerMenuDetail.classList.toggle('menu_active');
+    responsiveBtn.classList.toggle('menu_active');
 }
 
 function handleScroll() {
