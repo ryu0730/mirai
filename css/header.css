@@ -122,32 +122,50 @@
 
 /* 1000px以下はハンバーガーメニューに切り替え */
 @media screen and (max-width: 1000px) {
-    .header_nav {
+    /* オーバーレイ背景を独立させる */
+    .menu-overlay {
         position: fixed;
         top: 110px;
         left: 0;
-        width: 100%;
+        width: 100vw;
         height: calc(100vh - 110px);
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 997;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+    
+    .menu-overlay.menu_active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .header_nav {
+        position: fixed;
+        top: 110px; /* ヘッダーの下から開始 */
+        right: -300px; /* 初期状態では右側に隠す */
+        width: 300px; /* メニュー幅を固定 */
+        height: calc(100vh - 110px); /* ヘッダー分を除いた高さ */
+        background: #ffffff; /* 完全な白色に変更 */
         z-index: 998;
-        padding-top: 20px;
+        padding-top: 20px; /* 上部のパディング調整 */
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+        border-left: 1px solid #e0e0e0;
         
         /* アニメーション効果 */
-        opacity: 0;
-        transform: translateY(-20px);
-        visibility: hidden;
-        transition: all 0.3s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+        transition: right 0.3s ease-in-out;
     }
     
     .header_nav.menu_active {
-        opacity: 1;
-        transform: translateY(0);
-        visibility: visible;
+        right: 0; /* アクティブ時は右端に表示 */
     }
     
     .responsive_btn {
         display: flex;
+        z-index: 999; /* ハンバーガーボタンを最前面に */
     }
     
     .header_nav_lists {
@@ -155,15 +173,19 @@
         gap: 0;
         margin: 0;
         padding: 20px;
+        height: 100%;
+        overflow-y: auto;
+        background: transparent; /* 透明に設定 */
     }
     
     .header_nav_lists li {
         margin: 0;
-        text-align: center;
+        text-align: left; /* 左寄せに変更 */
         border-bottom: 1px solid #eee;
         opacity: 0;
-        transform: translateY(10px);
-        animation: fadeInUp 0.5s ease forwards;
+        transform: translateX(20px); /* 右からスライドイン */
+        animation: fadeInRight 0.5s ease forwards;
+        background: transparent; /* 透明に設定 */
     }
     
     /* 各メニュー項目に順次アニメーション */
@@ -174,10 +196,10 @@
     .header_nav_lists li:nth-child(5) { animation-delay: 0.3s; }
     .header_nav_lists li:nth-child(6) { animation-delay: 0.35s; }
     
-    @keyframes fadeInUp {
+    @keyframes fadeInRight {
         to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
         }
     }
     
@@ -187,6 +209,7 @@
         margin: 0;
         padding: 15px 0;
         color: #333;
+        background: transparent; /* 透明に設定 */
     }
     
     .nav_link:hover {
