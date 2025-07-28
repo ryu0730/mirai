@@ -173,7 +173,7 @@
     .content {
         width: 100%;
         padding: 10px;
-        margin-top: 60px;
+        margin-top: 130px; /* 元の設定に戻す */
     }
     
     .about-title {
@@ -240,7 +240,7 @@
 @media screen and (max-width: 480px) {
     .content {
         padding: 5px;
-        margin-top: 40px;
+        margin-top: 100px; /* スマホ用ヘッダー高さ80px + 余白20px */
     }
     
     .about-title {

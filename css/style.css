@@ -230,6 +230,13 @@ ul {
     }
 }
 
+/* スマホ用ヘッダー調整 */
+@media screen and (max-width: 480px) {
+    body {
+        margin-top: 100px; /* スマホ用ヘッダー高さ80px + 余白20px */
+    }
+}
+
 /* js function "menuToggle" starting only */
 .menu_active {
     right: 0;
