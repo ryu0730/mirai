@@ -1,23 +1,50 @@
 /* 講師カードのスタイル */
 .instructors {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3列表示 */
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 400px)); /* 最小320px、最大400pxに調整 */
+    gap: 30px;
+    max-width: 1400px; /* コンテナの最大幅を拡大 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 0 20px; /* 左右の余白 */
+    justify-content: center; /* グリッド全体を中央寄せ */
 }
 
 .instructor-card {
     background-color: white;
     border: 1px solid #eee;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 15px; /* 角を少し丸く */
+    padding: 30px; /* パディングを拡大 */
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 100%; /* 幅を100%に */
+    min-height: 120px; /* 最小高さを設定 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 内容を中央寄せ */
 }
 
 .instructor-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px); /* 上に浮き上がるホバー効果 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 講師カード内のテキストスタイル */
+.instructor-card p {
+    margin: 10px 0;
+}
+
+.instructor-card p:first-child {
+    font-size: 1.4rem; /* 講師名を少し大きく */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.instructor-card p:last-child {
+    font-size: 1.1rem; /* 大学名も少し大きく */
+    color: #666;
+    font-weight: normal;
 }
 
 /* モーダルウィンドウ */
@@ -72,57 +99,105 @@
     }
 }
 
-/* バツ印のスタイル */
+/* 閉じるボタンのスタイル */
 .close-button {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 24px;
+    top: 20px;
+    right: 20px;
+    font-size: 14px;
     cursor: pointer;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    padding: 5px;
-    width: 40px;
-    height: 40px;
+    background-color: #ff4757;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: white;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.close-button:hover {
+    background-color: #ff3742;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.4);
 }
 
 .close-button::before {
-    content: '\00d7'; /* バツ印を表示 */
-    font-size: 24px;
+    content: '✕ 閉じる'; /* バツ印と文字を表示 */
+    font-size: 14px;
     font-weight: bold;
-    color: #333;
 }
 
 /* 次へ進むボタンのスタイル */
 .next-button {
-    position: static;
-    margin: 32px auto 0 auto; /* 上に余白をつけて中央寄せ */
-    display: block;
+    position: fixed;
+    top: 50%;
+    right: 80px;
     transform: translateY(-50%);
-    background-color: #fff;
-    color: #333;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    padding: 5px;
-    width: 40px;
-    height: 40px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 8px;
+}
+
+.next-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-50%) translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
 }
 
 .next-button::before {
-    content: '\2192'; /* →記号を表示 */
-    font-size: 24px;
+    content: '次へ →'; /* 次へ文字と矢印を表示 */
+    font-size: 16px;
     font-weight: bold;
-    color: #333;
+}
+
+/* 前へ戻るボタンのスタイル */
+.prev-button {
+    position: fixed;
+    top: 50%;
+    left: 80px;
+    transform: translateY(-50%);
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.prev-button:hover {
+    background-color: #545b62;
+    transform: translateY(-50%) translateY(-1px);
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+}
+
+.prev-button::before {
+    content: '← 前へ'; /* 前へ文字と矢印を表示 */
+    font-size: 16px;
+    font-weight: bold;
 }
 
 /* モーダルウィンドウ内部の調整 */
@@ -285,19 +360,7 @@
         gap: 10px;
     }
     
-    .close-button {
-        top: 10px;
-        right: 10px;
-        width: 35px;
-        height: 35px;
-        font-size: 20px;
-    }
-    
-    .next-button {
-        width: 35px;
-        height: 35px;
-        margin: 20px auto 0 auto;
-    }
+    /* ボタンスタイルはメインのレスポンシブセクションで管理 */
 }
 
 @media screen and (max-width: 480px) {
@@ -334,16 +397,113 @@
         line-height: 1.4;
     }
     
+    /* ボタンスタイルはメインのレスポンシブセクションで管理 */
+}
+
+/* 追加のレスポンシブデザイン - 講師カード */
+@media (min-width: 1400px) {
+    .instructors {
+        grid-template-columns: repeat(3, 400px); /* 大画面では3列固定、各カード400px */
+        gap: 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .instructors {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
+        gap: 25px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .instructors {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .instructor-card {
+        padding: 20px;
+        min-height: 100px; /* モバイルでは最小高さを縮小 */
+    }
+}
+
+@media (max-width: 600px) {
+    .instructors {
+        grid-template-columns: 1fr; /* 1列表示 */
+        gap: 15px;
+    }
+    
+    .instructor-card {
+        padding: 15px;
+        min-height: 80px;
+    }
+}
+
+/* ボタンのレスポンシブデザイン */
+@media (max-width: 768px) {
     .close-button {
-        width: 30px;
-        height: 30px;
-        font-size: 18px;
+        top: 15px;
+        right: 15px;
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .close-button::before {
+        content: '✕'; /* モバイルでは文字を省略 */
+        font-size: 12px;
     }
     
     .next-button {
-        width: 30px;
-        height: 30px;
-        margin: 15px auto 0 auto;
+        top: 50%;
+        right: 50px;
+        transform: translateY(-50%);
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .next-button::before {
+        content: '次へ'; /* モバイルでは矢印を省略 */
+        font-size: 14px;
+    }
+    
+    .prev-button {
+        top: 50%;
+        left: 50px;
+        transform: translateY(-50%);
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .prev-button::before {
+        content: '前へ'; /* モバイルでは矢印を省略 */
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .close-button {
+        top: 10px;
+        right: 10px;
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+    
+    .next-button {
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
+    .prev-button {
+        top: 50%;
+        left: 30px;
+        transform: translateY(-50%);
+        padding: 10px 15px;
+        font-size: 12px;
     }
 }
 
