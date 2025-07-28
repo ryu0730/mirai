@@ -105,7 +105,7 @@
 @media screen and (max-width: 768px) {
     .content {
         width: 100%;
-        margin: 40px auto;
+        margin: 130px auto 40px auto; /* 元の設定に戻す */
         padding: 10px;
     }
     
@@ -178,6 +178,13 @@
     
     .message-content strong {
         font-size: 1.1rem;
+    }
+}
+
+/* 480px以下でヘッダー高さ調整 */
+@media screen and (max-width: 480px) {
+    .content {
+        margin: 100px auto 40px auto; /* スマホ用ヘッダー高さ80px + 余白20px */
     }
 }
 

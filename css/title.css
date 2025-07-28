@@ -48,7 +48,7 @@
 @media screen and (max-width: 768px) {
     .title {
         height: 100px;
-        margin-top: 60px;
+        margin-top: 130px; /* 元の設定に戻す */
         padding: 0 20px;
     }
     
@@ -66,7 +66,7 @@
 @media screen and (max-width: 480px) {
     .title {
         height: 80px;
-        margin-top: 50px;
+        margin-top: 100px; /* スマホ用ヘッダー高さ80px + 余白20px */
         padding: 0 15px;
     }
     
