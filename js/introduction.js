@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalContainer = document.getElementById('modal-container');
     const closeButton = document.querySelector('.close-button');
     const nextButton = document.querySelector('.next-button');
+    const prevButton = document.querySelector('.prev-button');
     let currentIndex = 0;
 
     function showLecturerDetails(index) {
@@ -29,6 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('lecturer-photo2').src = "path/to/photo2.jpg";
         document.getElementById('lecturer-photo3').src = "path/to/photo3.jpg";
 
+        // ボタンの表示/非表示を制御
+        prevButton.style.display = index === 0 ? 'none' : 'flex';
+        nextButton.style.display = index === instructorCards.length - 1 ? 'none' : 'flex';
+
         // モーダルを表示
         modalContainer.style.display = 'flex';
     }
@@ -48,6 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // 次へ進むボタンをクリックして次の講師の詳細を表示
     nextButton.addEventListener('click', function() {
         currentIndex = (currentIndex + 1) % instructorCards.length; // 次のインデックスを計算
+        showLecturerDetails(currentIndex);
+    });
+
+    // 前へ戻るボタンをクリックして前の講師の詳細を表示
+    prevButton.addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + instructorCards.length) % instructorCards.length; // 前のインデックスを計算
         showLecturerDetails(currentIndex);
     });
 
