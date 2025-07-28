@@ -184,7 +184,7 @@
 /* 480px以下でヘッダー高さ調整 */
 @media screen and (max-width: 480px) {
     .content {
-        margin: 100px auto 40px auto; /* スマホ用ヘッダー高さ80px + 余白20px */
+        margin: 85px auto 40px auto; /* スマホ用ヘッダー高さ80px + 最小余白5px */
     }
 }
 

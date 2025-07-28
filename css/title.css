@@ -66,7 +66,7 @@
 @media screen and (max-width: 480px) {
     .title {
         height: 80px;
-        margin-top: 100px; /* スマホ用ヘッダー高さ80px + 余白20px */
+        margin-top: 85px; /* スマホ用ヘッダー高さ80px + 最小余白5px */
         padding: 0 15px;
     }
     

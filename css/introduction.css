@@ -515,7 +515,7 @@ body {
 /* 480px以下でヘッダー高さ調整 */
 @media screen and (max-width: 480px) {
     body {
-        margin-top: 100px; /* スマホ用ヘッダー高さ80px + 余白20px */
+        margin-top: 85px; /* スマホ用ヘッダー高さ80px + 最小余白5px */
     }
 }
 
