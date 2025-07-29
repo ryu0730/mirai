@@ -159,7 +159,7 @@ function createDetailPage(news) {
     return `
         <div class="news-detail">
             <div class="detail-header">
-                <button class="back-button" onclick="showNewsList()">← 一覧に戻る</button>
+                <button class="back-button" onclick="goBackToOrigin()">← 一覧に戻る</button>
                 <div class="detail-date">${news.date}</div>
             </div>
             <div class="detail-content">
@@ -218,6 +218,20 @@ function showNewsDetail(newsId) {
         
         // ページトップにスクロール
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+// 参照元に応じて適切なページに戻る関数
+function goBackToOrigin() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const from = urlParams.get('from');
+    
+    if (from === 'home') {
+        // ホームページから来た場合はホームページに戻る
+        window.location.href = 'index.html';
+    } else {
+        // everyoneページから来た場合は一覧表示に戻る
+        showNewsList();
     }
 }
 
