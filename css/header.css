@@ -27,6 +27,13 @@
 .page_logo {
     font-size: 45px;
     margin: 0;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.page_logo:hover {
+    color: #18bc9c;
 }
 
 .header_nav_lists {
@@ -37,6 +44,16 @@
 .nav_link {
     font-size: 14px;
     margin-left: 30px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav_link:hover {
+    background-color: #f0f0f0;
+    color: #18bc9c;
 }
 
 .responsive_btn {
@@ -53,6 +70,13 @@
     transform: translateY(-50%);
     right: 40px;
     z-index: 10;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.responsive_btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .menu_line {
@@ -235,6 +259,11 @@
         width: 28px;
         height: 28px;
         right: 20px;
+        padding: 2px;
+    }
+    
+    .responsive_btn:hover {
+        background-color: rgba(0, 0, 0, 0.1);
     }
     
     .menu_line {
@@ -278,5 +307,6 @@
     .nav_link {
         font-size: 13px;
         margin-left: 25px;
+        padding: 6px 10px;
     }
 }
