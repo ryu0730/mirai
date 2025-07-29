@@ -250,7 +250,13 @@
 /* 詳細ページのスタイル */
 .news-detail {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 130px auto 80px auto; /* ヘッダー分の上マージンを追加 */
+    padding: 20px;
+}
+
+/* 詳細ページ表示時はタイトルセクションを非表示 */
+body.detail-view .title {
+    display: none !important;
 }
 
 .detail-header {
@@ -331,6 +337,11 @@
         font-size: 1.2rem;
     }
     
+    .news-detail {
+        margin: 100px auto 40px auto; /* タブレットでヘッダー分調整 */
+        padding: 15px;
+    }
+    
     .detail-header {
         flex-direction: column;
         gap: 15px;
@@ -350,6 +361,11 @@
     .news-card {
         padding: 12px 12px !important; /* スマホではさらに小さく */
         margin-bottom: 15px !important;
+    }
+    
+    .news-detail {
+        margin: 90px auto 40px auto; /* スマホでヘッダー分調整（480px以下では80pxヘッダー） */
+        padding: 10px;
     }
     
     .news-title {

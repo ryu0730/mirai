@@ -175,6 +175,9 @@ function showNewsList() {
     const newsCards = newsData.map(news => createNewsCard(news)).join('');
     container.innerHTML = newsCards;
     
+    // タイトルセクションを表示
+    document.body.classList.remove('detail-view');
+    
     // カードクリックイベントを追加
     document.querySelectorAll('.news-card').forEach(card => {
         card.addEventListener('click', () => {
@@ -209,6 +212,9 @@ function showNewsDetail(newsId) {
     if (news) {
         const container = document.getElementById('news-container');
         container.innerHTML = createDetailPage(news);
+        
+        // タイトルセクションを非表示
+        document.body.classList.add('detail-view');
         
         // ページトップにスクロール
         window.scrollTo({ top: 0, behavior: 'smooth' });
