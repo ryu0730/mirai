@@ -126,8 +126,8 @@
 
 /* ハンバーガーメニューが開いているときの×印アニメーション */
 .responsive_btn.menu_active .menu_line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 9px) !important;
-    -webkit-transform: rotate(45deg) translate(5px, 9px) !important;
+    transform: rotate(45deg) translate(5.5px, 5.5px) !important;
+    -webkit-transform: rotate(45deg) translate(5.5px, 5.5px) !important;
     will-change: auto !important;
 }
 
@@ -139,8 +139,8 @@
 }
 
 .responsive_btn.menu_active .menu_line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -9px) !important;
-    -webkit-transform: rotate(-45deg) translate(5px, -9px) !important;
+    transform: rotate(-45deg) translate(6px, -6px) !important;
+    -webkit-transform: rotate(-45deg) translate(6px, -6px) !important;
     will-change: auto !important;
 }
 
@@ -282,13 +282,13 @@
     
     /* スマートフォン用の×印アニメーション調整 */
     .responsive_btn.menu_active .menu_line:nth-child(1) {
-        transform: rotate(45deg) translate(4px, 9px) !important;
-        -webkit-transform: rotate(45deg) translate(4px, 9px) !important;
+        transform: rotate(45deg) translate(5.5px, 5.5px) !important;
+        -webkit-transform: rotate(45deg) translate(5.5px, 5.5px) !important;
     }
     
     .responsive_btn.menu_active .menu_line:nth-child(3) {
-        transform: rotate(-45deg) translate(4px, -9px) !important;
-        -webkit-transform: rotate(-45deg) translate(4px, -9px) !important;
+        transform: rotate(-45deg) translate(6px, -6px) !important;
+        -webkit-transform: rotate(-45deg) translate(6px, -6px) !important;
     }
     
     .menu-overlay {
