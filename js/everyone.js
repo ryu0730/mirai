@@ -223,5 +223,15 @@ function showNewsDetail(newsId) {
 
 // ページ読み込み時にお知らせ一覧を表示
 document.addEventListener('DOMContentLoaded', () => {
-    showNewsList();
+    // URLパラメータをチェック
+    const urlParams = new URLSearchParams(window.location.search);
+    const newsId = urlParams.get('newsId');
+    
+    if (newsId) {
+        // 特定のお知らせを表示
+        showNewsDetail(parseInt(newsId));
+    } else {
+        // 一覧を表示
+        showNewsList();
+    }
 });

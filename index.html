@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/message.css"> <!-- お知らせスタイル用 -->
 
   <!-- google fonts 読み込み -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,6 +56,7 @@
     <!-- メニューオーバーレイ -->
     <div class="menu-overlay"></div>
 
+    <script src="js/home-news.js"></script> <!-- ホーム用お知らせスクリプト -->
     <script src="js/main.js"></script>
 
     <main>
@@ -77,19 +79,8 @@
     <div class="main_title_design">
       <p class="main_ja_title">お知らせ</p>
       <p class="main_en_title">News</p><br>
-      <div class="main_contents">
-        <div class="news_item">
-          <p class="news_date">2024.07.14</p>
-          <p class="news_text">夏期講習の申し込みを開始しました。詳細はお問い合わせください。</p>
-        </div>
-        <div class="news_item">
-          <p class="news_date">2024.07.10</p>
-          <p class="news_text">新しい講師の紹介ページを更新しました。</p>
-        </div>
-        <div class="news_item">
-          <p class="news_date">2024.07.05</p>
-          <p class="news_text">卒業生の声を追加しました。</p>
-        </div>
+      <div class="main_contents" id="home-news-container">
+        <!-- お知らせのカードはここに追加されます -->
       </div>
     </div>
   </section>
