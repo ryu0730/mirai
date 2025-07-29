@@ -99,8 +99,8 @@ function createHomeNewsCard(news) {
 
 // ホーム画面お知らせ詳細を表示する関数（everyoneページへリダイレクト）
 function showHomeNewsDetail(newsId) {
-    // everyoneページの詳細表示に遷移
-    window.location.href = `everyone.html?newsId=${newsId}`;
+    // everyoneページの詳細表示に遷移（参照元をホームページとして記録）
+    window.location.href = `everyone.html?newsId=${newsId}&from=home`;
 }
 
 // ホーム画面お知らせ一覧を表示する関数
