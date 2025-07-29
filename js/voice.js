@@ -1,217 +1,232 @@
-// お知らせデータ
-const newsData = [
+// 卒業生の声データ
+const voiceData = [
     {
         id: 1,
-        date: '2024年12月15日',
-        title: '猿払村未来塾 第3期生募集開始のお知らせ',
-        summary: '2025年度猿払村未来塾の第3期生の募集を開始いたします。応募締切は2025年1月31日です。',
-        content: `
-            <h2>猿払村未来塾 第3期生募集開始</h2>
-            <p><strong>募集期間：</strong>2024年12月15日〜2025年1月31日</p>
-            <p><strong>対象：</strong>中学1年生〜3年生</p>
-            <p><strong>定員：</strong>20名</p>
+        name: '田中 優香',
+        role: '第1期生',
+        currentStatus: '北海道大学工学部2年',
+        graduationYear: '2024年3月卒業',
+        image: '', // 後で写真のパスを設定
+        message: `猿払村未来塾での3年間で、将来への明確なビジョンを持つことができました。特に東京での研修で大学の研究室を見学したり、企業の最新技術に触れたりする中で、「工学の力で地域の課題を解決したい」という目標が生まれました。現在は北海道大学工学部で情報工学を専攻し、将来は猿払村に戻って地域の発展に貢献したいと考えています。`,
+        detailedMessage: `
+            <h3>未来塾に入ったきっかけ</h3>
+            <p>中学2年生の時、将来何をしたいのか全く分からない状態でした。そんな時に猿払村未来塾の募集を知り、「何か変わるきっかけになれば」と思って応募しました。</p>
             
-            <h3>応募方法</h3>
-            <p>以下の書類を猿払村教育委員会まで提出してください：</p>
+            <h3>未来塾での学び</h3>
+            <p>特に印象に残っているのは、東京での研修です。大学の研究室を見学したり、企業の最新技術に触れたりする中で、「工学の力で地域の課題を解決したい」という目標が生まれました。</p>
+            
+            <h4>具体的な活動</h4>
             <ul>
-                <li>申込書（学校で配布）</li>
-                <li>志望動機書（400字程度）</li>
-                <li>保護者同意書</li>
+                <li>地域の農業課題についてのフィールドワーク</li>
+                <li>IoT技術を活用した解決策の提案</li>
+                <li>プレゼンテーション能力の向上</li>
+                <li>大学教授や研究者との交流</li>
             </ul>
             
-            <h3>選考方法</h3>
-            <p>書類選考および面接により選考いたします。</p>
-            <p>面接日：2025年2月10日（土）</p>
+            <h3>現在の活動</h3>
+            <p>現在は北海道大学工学部で情報工学を専攻しています。大学での学びを活かして、将来は猿払村に戻り、地域の発展に貢献したいと考えています。</p>
             
-            <h3>お問い合わせ</h3>
-            <p>猿払村教育委員会 TEL: 01635-2-3011</p>
+            <h3>後輩へのメッセージ</h3>
+            <p>未来塾は、自分の可能性を広げてくれる場所です。最初は不安もありましたが、仲間と共に学び、成長できる環境があります。ぜひ積極的にチャレンジしてください。</p>
         `
     },
     {
         id: 2,
-        date: '2024年11月28日',
-        title: '猿払村未来塾 成果発表会開催のお知らせ',
-        summary: '第2期生による研究成果発表会を12月20日に開催いたします。地域の皆様もぜひご参加ください。',
-        content: `
-            <h2>猿払村未来塾 第2期生成果発表会</h2>
-            <p><strong>開催日時：</strong>2024年12月20日（金）14:00〜16:00</p>
-            <p><strong>会場：</strong>猿払村公民館 大ホール</p>
-            <p><strong>参加費：</strong>無料</p>
+        name: '佐藤 健太',
+        role: '第1期生',
+        currentStatus: '株式会社サルフツテック代表',
+        graduationYear: '2024年3月卒業',
+        image: '', // 後で写真のパスを設定
+        message: `未来塾で学んだ起業家精神を活かし、高校卒業後に地域密着型のIT企業を立ち上げました。「地域の課題をビジネスで解決する」という考え方を未来塾で学び、特に高校3年生の時の起業家講演会がきっかけで自分も挑戦してみたいと思うようになりました。現在は猿払村を拠点として、宗谷地域全体のDX化を支援しています。`,
+        detailedMessage: `
+            <h3>起業を決意したきっかけ</h3>
+            <p>未来塾での3年間で、「地域の課題をビジネスで解決する」という考え方を学びました。特に高校3年生の時の起業家講演会がきっかけで、自分も挑戦してみたいと思うようになりました。</p>
             
-            <h3>発表内容</h3>
-            <p>第2期生が1年間取り組んできた研究プロジェクトの成果を発表します：</p>
+            <h3>未来塾での経験が活きている点</h3>
             <ul>
-                <li>「猿払村の観光資源を活用した地域活性化プラン」</li>
-                <li>「IoTを活用した農業の効率化」</li>
-                <li>「高齢者支援システムの開発」</li>
-                <li>「再生可能エネルギーによる持続可能な村づくり」</li>
+                <li><strong>課題発見力：</strong>地域のフィールドワークで培った観察力</li>
+                <li><strong>プレゼンテーション力：</strong>投資家への提案に活用</li>
+                <li><strong>ネットワーク：</strong>未来塾で出会った講師陣からの継続的なアドバイス</li>
+                <li><strong>技術力：</strong>プログラミングやWebデザインのスキル</li>
             </ul>
             
-            <h3>申込方法</h3>
-            <p>事前申込不要です。当日直接会場にお越しください。</p>
+            <h3>現在の事業内容</h3>
+            <p>株式会社サルフツテックでは、以下のような事業を展開しています：</p>
+            <ul>
+                <li>地域企業向けのWebサイト制作</li>
+                <li>観光情報発信アプリの開発</li>
+                <li>農業IoTシステムの導入支援</li>
+                <li>小中学生向けプログラミング教室の運営</li>
+            </ul>
             
-            <h3>お問い合わせ</h3>
-            <p>猿払村教育委員会 TEL: 01635-2-3011</p>
+            <h3>今後の展望</h3>
+            <p>猿払村を拠点として、宗谷地域全体のDX化を支援していきたいと考えています。また、未来塾の後輩たちにも実際の仕事を通じて学習機会を提供していきたいです。</p>
+            
+            <h3>未来塾生へのアドバイス</h3>
+            <p>失敗を恐れずに、どんどん挑戦してください。未来塾は失敗から学べる安全な環境です。そこで得た経験は、必ず将来の糧になります。</p>
         `
     },
     {
         id: 3,
-        date: '2024年10月15日',
-        title: '猿払村未来塾 特別講演会開催',
-        summary: '東京大学教授による「未来の科学技術と地方創生」をテーマとした特別講演会を開催いたします。',
-        content: `
-            <h2>特別講演会「未来の科学技術と地方創生」</h2>
-            <p><strong>開催日時：</strong>2024年11月15日（金）19:00〜20:30</p>
-            <p><strong>会場：</strong>猿払村公民館 研修室</p>
-            <p><strong>講師：</strong>東京大学大学院工学系研究科 田中一郎教授</p>
+        name: '鈴木 美咲',
+        role: '第1期生',
+        currentStatus: '札幌医科大学医学部1年',
+        graduationYear: '2024年3月卒業',
+        image: '', // 後で写真のパスを設定
+        message: `地域医療の現状を学び、医師を目指すようになりました。未来塾で地域医療についてのフィールドワークを行い、猿払村の医療現状を知る中で、「この地域の医療を支えたい」という気持ちが芽生えました。現在は札幌医科大学で基礎医学を学び、将来は地域医療に貢献できる医師になりたいと考えています。`,
+        detailedMessage: `
+            <h3>医師を目指すようになったきっかけ</h3>
+            <p>中学生の頃は、将来の職業について具体的に考えたことがありませんでした。しかし、未来塾で地域医療についてのフィールドワークを行い、猿払村の医療現状を知る中で、「この地域の医療を支えたい」という気持ちが芽生えました。</p>
             
-            <h3>講演内容</h3>
-            <p>AI、IoT、再生可能エネルギーなどの最新技術が地方創生にどのように活用できるかについて、具体的な事例を交えながらお話しいただきます。</p>
-            
-            <h3>対象</h3>
+            <h3>未来塾での学習内容</h3>
+            <h4>医療関連プロジェクト</h4>
             <ul>
-                <li>猿払村未来塾生・保護者</li>
-                <li>地域住民の皆様</li>
-                <li>教育関係者</li>
+                <li>地域の高齢化と医療ニーズの調査</li>
+                <li>遠隔医療システムの可能性調査</li>
+                <li>予防医学の重要性についての研究発表</li>
+                <li>札幌の病院での見学実習</li>
             </ul>
             
-            <h3>申込方法</h3>
-            <p>猿払村教育委員会まで電話またはメールでお申し込みください。</p>
-            <p>定員：50名（先着順）</p>
+            <h4>基礎学力の向上</h4>
+            <ul>
+                <li>数学・理科の発展的学習</li>
+                <li>医学英語の基礎学習</li>
+                <li>論文の読み方・書き方の習得</li>
+            </ul>
             
-            <h3>お問い合わせ</h3>
-            <p>猿払村教育委員会</p>
-            <p>TEL: 01635-2-3011</p>
-            <p>Mail: kodomomirai@sarufutsu.lg.jp</p>
+            <h3>受験対策と成果</h3>
+            <p>未来塾の講師陣による個別指導のおかげで、医学部受験に必要な学力を効率的に身につけることができました。特に、研究発表の経験が面接試験で大きな武器になりました。</p>
+            
+            <h3>大学での学び</h3>
+            <p>現在は札幌医科大学で基礎医学を学んでいます。未来塾で培った「地域の課題を解決する」という視点を持ち続けながら、将来は地域医療に貢献できる医師になりたいと考えています。</p>
+            
+            <h3>後輩へのメッセージ</h3>
+            <p>未来塾は、自分の「やりたいこと」を見つけられる場所です。様々な分野の専門家と出会い、実際の現場を体験することで、きっと自分なりの目標が見えてくると思います。</p>
         `
     },
     {
         id: 4,
-        date: '2024年9月30日',
-        title: '猿払村未来塾 夏季研修報告',
-        summary: '8月に実施された東京研修の報告書を公開いたします。塾生たちの貴重な学びの記録をご覧ください。',
-        content: `
-            <h2>猿払村未来塾 夏季東京研修報告</h2>
-            <p><strong>研修期間：</strong>2024年8月5日〜8月9日（4泊5日）</p>
-            <p><strong>参加者：</strong>第2期生 18名、引率教員 3名</p>
+        name: '山田 直樹',
+        role: '第1期生',
+        currentStatus: '北海道教育大学2年',
+        graduationYear: '2024年3月卒業',
+        image: '', // 後で写真のパスを設定
+        message: `未来塾での経験をきっかけに教育に興味を持ち、現在は北海道教育大学で学んでいます。3年間の活動を通じて、「教育こそが地域の未来を創る」ということを実感し、教師を志すようになりました。将来は猿払村をはじめとする宗谷地域の中学校で教員として働き、自分が受けたような「探究型学習」を次の世代に伝えていきたいです。`,
+        detailedMessage: `
+            <h3>教育への関心</h3>
+            <p>未来塾に参加する前は、特に将来の職業について深く考えていませんでした。しかし、3年間の活動を通じて、「教育こそが地域の未来を創る」ということを実感し、教師を志すようになりました。</p>
             
-            <h3>研修内容</h3>
-            <h4>1日目：東京大学見学・講義受講</h4>
+            <h3>印象に残った活動</h3>
+            <h4>小学校でのプログラミング授業サポート</h4>
+            <p>高校2年生の時、猿払小学校でプログラミング授業のサポートをする機会がありました。子どもたちの目の輝きや、理解した時の喜びの表情を見て、教育の素晴らしさを感じました。</p>
+            
+            <h4>学習塾での指導経験</h4>
             <ul>
-                <li>工学部研究室見学</li>
-                <li>「科学技術と社会」特別講義</li>
-                <li>大学生との交流会</li>
+                <li>中学生への数学・理科指導</li>
+                <li>学習意欲向上のための工夫</li>
+                <li>個別カウンセリングの実施</li>
+                <li>保護者との連携</li>
             </ul>
             
-            <h4>2日目：企業訪問</h4>
-            <ul>
-                <li>トヨタ自動車本社見学</li>
-                <li>NTTドコモ R&D センター訪問</li>
-                <li>最新技術デモンストレーション見学</li>
-            </ul>
+            <h3>大学での学び</h3>
+            <p>現在は北海道教育大学で中学校教員免許（数学・理科）の取得を目指しています。また、ICT教育やアクティブラーニングについても深く学んでいます。</p>
             
-            <h4>3日目：政府機関見学</h4>
-            <ul>
-                <li>文部科学省訪問</li>
-                <li>国会議事堂見学</li>
-                <li>政策立案体験ワークショップ</li>
-            </ul>
+            <h4>研究テーマ</h4>
+            <p>「地方における探究型学習の効果的な実践方法」について研究しています。未来塾での経験を学術的に分析し、他の地域でも応用できる教育プログラムの開発を目指しています。</p>
             
-            <h4>4日目：研究発表準備</h4>
-            <ul>
-                <li>グループディスカッション</li>
-                <li>プレゼンテーション準備</li>
-                <li>発表練習</li>
-            </ul>
+            <h3>将来の目標</h3>
+            <p>大学卒業後は、猿払村をはじめとする宗谷地域の中学校で教員として働きたいと考えています。そして、自分が受けたような「探究型学習」を次の世代に伝えていきたいです。</p>
             
-            <h4>5日目：成果発表・帰村</h4>
-            <ul>
-                <li>研修成果発表会</li>
-                <li>今後の活動計画策定</li>
-            </ul>
+            <h3>未来塾への感謝</h3>
+            <p>未来塾は私にとって、単なる学習の場ではなく、「人生の方向性」を見つけられる場所でした。多様な経験と出会いが、今の自分を形作っています。</p>
             
-            <h3>塾生の感想</h3>
-            <p>「東京で見た最先端の技術を、猿払村でも活用できる方法を考えるきっかけになりました。」</p>
-            <p>「大学の研究室で実際に実験を見せてもらい、科学への興味がさらに深まりました。」</p>
-            
-            <h3>今後の予定</h3>
-            <p>研修で学んだ内容を活かし、12月の成果発表会に向けて各自のプロジェクトを進めていきます。</p>
+            <h3>現在の塾生へのメッセージ</h3>
+            <p>今は将来が見えなくても大丈夫です。未来塾での一つ一つの経験が、きっと将来への道筋を示してくれます。仲間と共に、思いっきり学び、挑戦してください。</p>
         `
     }
 ];
 
-// お知らせカードを生成する関数
-function createNewsCard(news) {
+// 卒業生の声カードを生成する関数
+function createVoiceCard(voice) {
     return `
-        <div class="message-card news-card visible" data-id="${news.id}">
+        <div class="message-card visible" data-id="${voice.id}">
+            <div class="black-square-container">
+                <div class="black-square"></div>
+                <div class="role-name">
+                    <h2>${voice.role}</h2>
+                    <h3>${voice.name}</h3>
+                </div>
+            </div>
             <div class="message-content">
-                <div class="news-date">${news.date}</div>
-                <h3 class="news-title">${news.title}</h3>
-                <p class="news-summary">${news.summary}</p>
-                <div class="read-more">詳細を見る →</div>
+                <p><strong>${voice.currentStatus}</strong></p>
+                <p><strong>${voice.graduationYear}</strong></p>
+                <p>${voice.message}</p>
             </div>
         </div>
     `;
 }
 
 // 詳細ページを生成する関数
-function createDetailPage(news) {
+function createDetailPage(voice) {
     return `
         <div class="news-detail">
             <div class="detail-header">
-                <button class="back-button" onclick="showNewsList()">← 一覧に戻る</button>
-                <div class="detail-date">${news.date}</div>
+                <button class="back-button" onclick="showVoiceList()">← 一覧に戻る</button>
+                <div class="detail-date">${voice.graduationYear}</div>
             </div>
             <div class="detail-content">
-                ${news.content}
+                <h2>${voice.name}さんからのメッセージ</h2>
+                <p><strong>${voice.role} | ${voice.currentStatus}</strong></p>
+                ${voice.detailedMessage}
             </div>
         </div>
     `;
 }
 
-// お知らせ一覧を表示する関数
-function showNewsList() {
-    const container = document.getElementById('news-container');
-    const newsCards = newsData.map(news => createNewsCard(news)).join('');
-    container.innerHTML = newsCards;
+// 卒業生の声一覧を表示する関数
+function showVoiceList() {
+    const container = document.getElementById('voice-container');
+    const voiceCards = voiceData.map(voice => createVoiceCard(voice)).join('');
+    container.innerHTML = voiceCards;
     
     // タイトルセクションを表示
     document.body.classList.remove('detail-view');
     
     // カードクリックイベントを追加
-    document.querySelectorAll('.news-card').forEach(card => {
+    document.querySelectorAll('.message-card').forEach(card => {
         card.addEventListener('click', () => {
-            const newsId = parseInt(card.dataset.id);
-            showNewsDetail(newsId);
+            const voiceId = parseInt(card.dataset.id);
+            showVoiceDetail(voiceId);
         });
-        
-        // タッチデバイス用のイベント処理
-        card.addEventListener('touchstart', () => {
-            // タッチ開始時に他のカードのホバー状態をリセット
-            document.querySelectorAll('.news-card').forEach(otherCard => {
-                if (otherCard !== card) {
-                    otherCard.style.transform = 'translateY(0)';
-                    otherCard.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
-                }
-            });
+    });
+    
+    // スクロールアニメーション
+    const cards = document.querySelectorAll('.message-card');
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
-        
-        card.addEventListener('touchend', () => {
-            // タッチ終了時にカードの状態をリセット
-            setTimeout(() => {
-                card.style.transform = 'translateY(0)';
-                card.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
-            }, 150);
-        });
+    }, observerOptions);
+    
+    cards.forEach(card => {
+        card.classList.remove('visible');
+        observer.observe(card);
     });
 }
 
-// お知らせ詳細を表示する関数
-function showNewsDetail(newsId) {
-    const news = newsData.find(item => item.id === newsId);
-    if (news) {
-        const container = document.getElementById('news-container');
-        container.innerHTML = createDetailPage(news);
+// 卒業生の声詳細を表示する関数
+function showVoiceDetail(voiceId) {
+    const voice = voiceData.find(item => item.id === voiceId);
+    if (voice) {
+        const container = document.getElementById('voice-container');
+        container.innerHTML = createDetailPage(voice);
         
         // タイトルセクションを非表示
         document.body.classList.add('detail-view');
@@ -221,7 +236,7 @@ function showNewsDetail(newsId) {
     }
 }
 
-// ページ読み込み時にお知らせ一覧を表示
+// ページ読み込み時に卒業生の声一覧を表示
 document.addEventListener('DOMContentLoaded', () => {
-    showNewsList();
+    showVoiceList();
 });
