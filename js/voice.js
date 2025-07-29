@@ -181,6 +181,25 @@ function showNewsList() {
             const newsId = parseInt(card.dataset.id);
             showNewsDetail(newsId);
         });
+        
+        // タッチデバイス用のイベント処理
+        card.addEventListener('touchstart', () => {
+            // タッチ開始時に他のカードのホバー状態をリセット
+            document.querySelectorAll('.news-card').forEach(otherCard => {
+                if (otherCard !== card) {
+                    otherCard.style.transform = 'translateY(0)';
+                    otherCard.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
+                }
+            });
+        });
+        
+        card.addEventListener('touchend', () => {
+            // タッチ終了時にカードの状態をリセット
+            setTimeout(() => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
+            }, 150);
+        });
     });
 }
 
