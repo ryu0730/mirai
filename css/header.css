@@ -282,13 +282,13 @@
     
     /* スマートフォン用の×印アニメーション調整 */
     .responsive_btn.menu_active .menu_line:nth-child(1) {
-        transform: rotate(45deg) translate(5.5px, 5.5px) !important;
-        -webkit-transform: rotate(45deg) translate(5.5px, 5.5px) !important;
+        transform: rotate(45deg) translate(6px, 4px) !important;
+        -webkit-transform: rotate(45deg) translate(6px, 4px) !important;
     }
     
     .responsive_btn.menu_active .menu_line:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px) !important;
-        -webkit-transform: rotate(-45deg) translate(6px, -6px) !important;
+        transform: rotate(-45deg) translate(6px, -4px) !important;
+        -webkit-transform: rotate(-45deg) translate(6px, -4px) !important;
     }
     
     .menu-overlay {
