@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;   /* 横方向中央 */
     align-items: center;       /* 縦方向中央 */
-    height: 150px;
+    height: 100px; /* 高さを縮小 */
     margin-top: 130px; /* ヘッダー高さ + 余白 */
 }
 

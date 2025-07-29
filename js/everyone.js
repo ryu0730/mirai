@@ -1,4 +1,4 @@
-// お知らせデータ
+// お知らせデータ（voice.jsと同じ内容）
 const newsData = [
     {
         id: 1,
