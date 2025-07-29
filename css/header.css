@@ -251,6 +251,17 @@
         margin: 2px 0 !important;
     }
     
+    /* スマートフォン用の×印アニメーション調整 */
+    .responsive_btn.menu_active .menu_line:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 9px) !important;
+        -webkit-transform: rotate(45deg) translate(4px, 9px) !important;
+    }
+    
+    .responsive_btn.menu_active .menu_line:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -9px) !important;
+        -webkit-transform: rotate(-45deg) translate(4px, -9px) !important;
+    }
+    
     .menu-overlay {
         top: 80px; /* ヘッダー高さに合わせて調整 */
         height: calc(100vh - 80px);
