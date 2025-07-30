@@ -38,16 +38,20 @@
     margin-top: 20px; /* 上部に余白を追加 */
     position: relative;
     touch-action: pan-y; /* 縦スクロールは許可、横スクロールは制御 */
+    overscroll-behavior-x: none; /* 横スクロールのオーバースクロールを無効化 */
 }
 
 .scroll-images {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform; /* パフォーマンス向上 */
     user-select: none; /* テキスト選択を無効化 */
     -webkit-user-select: none; /* Safari用 */
     -moz-user-select: none; /* Firefox用 */
     -ms-user-select: none; /* IE用 */
+    transform: translateZ(0); /* ハードウェアアクセラレーション有効化 */
+    width: 100%; /* 全幅を使用 */
+    height: 100%; /* 全高を使用 */
 }
 
 .image-box {
