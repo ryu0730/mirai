@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: 'アニメ、ドラマを観る、温泉に行く！',
             message: 'もう頑張れないって時があってもみんな未来塾で頑張れた経験があるから、大丈夫！！それでも頑張れなかったり、不安なことがあったら先生たちを頼ってください！絶対力になります！',
             photos: [
-                'img/sample1.jpg', 'img/sample2.jpg', 'img/sample3.jpg'
+                'img/takahashi(1).jpg', 'img/takahashi(2).jpg', 'img/takahashi(3).jpg'
             ]
         },
         {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: '沢山寝たり、友達と美味しいご飯を食べに行ったり、カフェで勉強したり！',
             message: '夢に向かって一緒に頑張ろう！',
             photos: [
-                'img/sample4.jpg', 'img/sample5.jpg', 'img/sample6.jpg'
+                'img/tubaki1(1).jpg', 'img/tubaki1(2).jpg', 'img/tubaki1(3).jpg'
             ]
         },
         {
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: '友達と買い物やご飯に行ったり、アカペラサークルの練習をしています！1人時間も大切なので、家で大好きなディズニーの映画を観たり最新の情報を調べたりしています！',
             message: '大学生になってから、今が1番楽しい！という気持ちが毎年更新され続けていっています！何かに躓くことがあっても、挫けず今いる環境でどうすれば1番未来の自分が幸せでいられるかを考えて進んでみてください！',
             photos: [
-                'img/sample7.jpg', 'img/sample8.jpg', 'img/sample9.jpg'
+                'img/kamegawa(1).jpg', 'img/kamegawa(2).jpg', 'img/kamegawa(3).jpg'
             ]
         },
         {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: '料理したり友達と喋ったりしています。',
             message: '1番楽しい青春時代をぜひ謳歌してほしいです！',
             photos: [
-                'img/sample10.jpg', 'img/sample11.jpg', 'img/sample12.jpg'
+                'img/hayakawa(1).jpg', 'img/hayakawa(2).jpg', 'img/hayakawa(3).jpg'
             ]
         },
         {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: 'バイトしたりライブ行ったり友達と遊んでいます。家でゴロゴロするのもめちゃくちゃ好きです。',
             message: '思った道に進めないこともあると思いますが、その道が間違ってるとは限りません。無理はせず、何事も全力で取り組んでほしいです！',
             photos: [
-                'img/sample13.jpg', 'img/sample14.jpg', 'img/sample15.jpg'
+                'img/nakamura(1).jpg', 'img/nakamura(2).jpg', 'img/nakamura(3).jpg'
             ]
         },
         {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: '大学生になると、いつも休日みたいに過ごせます。だから、休日だからこれをする！ってものはないかもしれません。僕が趣味がない人間だからという説もあります。',
             message: '僕は勉強とは本来楽しいものであると思います。勉強をするとできなかったことができるようになるからです。できなかったことができるようになると、高揚感があると思います。楽しいと思います。自分を誇らしく思えるでしょう。しかし、勉強は苦しい、楽しくないと思う人が多いと思います。なぜでしょう。原因は２つあると思っていて、一つ目は周りと比べることだと思います。例えば、自分は九九を覚えるのに一週間かかったのに、隣のあの子は３日で覚えてるってなったら、すごく惨めな気持ちになると思います。隣のあの子がいなかったら、比べなかったら「やった！１週間かかったけど、九九覚えられたぞ！」って嬉しいだけなのに。比べることで楽しくなくなってしまう。原因の二つ目は、授業に置いて行かれることだと思います。授業で分からないことがあって、それをそのままにして次の授業を聞いたとき、高確率で理解できないと思います。授業は過去の授業で学んだことを当たり前のこととして進んでいくからです（１＋１が分からないのにひっ算ができるわけないですよね）。理解できないと、授業というのは、理解できない自分を惨めに思うだけの時間になります。ます。そりゃ、勉強が嫌いになるのは無理もないと思います。大人でもそんなこと逃げたくなると思います。まとめると、勉強が嫌いになる原因は周りと比べること、周りの授業の速度に合わせることです。だからぜひ皆さんには自分のペースで勉強を頑張るように心がけてほしいです。周りは気にせず、自分には何が足りてないんだろうって考えて、必要ならばめちゃくちゃ過去にやった授業にもっどてやり直してもいいと思います。追記：周りと比べることでやる気になったり、周りに合わせることで頑張れたりする人もいるので、この考え方だけが正解ってことはないと思います',
             photos: [
-                'img/sample13.jpg', 'img/sample14.jpg', 'img/sample15.jpg'
+                'img/simada(1).jpg', 'img/simada(2).jpg', 'img/simada(3).jpg'
             ]
         },
         {
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: '書道の師範資格を取得するために習字教室に行くのと、児童会館で小学生と遊んでいるのが多いです',
             message: '色々興味をもってチャレンジしたり、どこかに行って美味しいものを食べたりすると、視野が広がって楽しい日々になります！ぜひたくさんの体験・経験をしてみてください…！',
             photos: [
-                'img/sample22.jpg', 'img/sample23.jpg', 'img/sample24.jpg'
+                'img/oomiya(1).jpg', 'img/oomiya(2).jpg', 'img/oomiya(3).jpg'
             ]
         },
         {
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: '外に出て、人がいる場所に行ってみる！',
             message: '「ああもうだめだ、全部やめてしまいたい」と思っても、意外と生活は続くのだと思います。暗く辛い生活を支えるのは、めいっぱい遊んだ時間と、今まで自分が学んできたことです。いつでも何でも話しましょう！',
             photos: [
-                'img/sample25.jpg', 'img/sample26.jpg', 'img/sample27.jpg'
+                'img/nunokawa(1).jpg', 'img/nunokawa(2).jpg', 'img/nunokawa(3).jpg'
             ]
         },
         {
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: '昼間は家でテレビ見たりごろごろして、バイトに行くことが多いです。',
             message: '目標に向かって、一緒に楽しく勉強しましょう！！',
             photos: [
-                'img/sample28.jpg', 'img/sample29.jpg', 'img/sample30.jpg'
+                'img/kodama(1).jpg', 'img/kodama(2).jpg', 'img/kodama(3).jpg'
             ]
         },
         {
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: 'ボードゲームしてます（特にカタン）',
             message: '未来塾で色々な先生に出会ったように、社会にいる様々な人に出会って、自分の世界を広げていってください！みんなの人生を全力応援してますー！',
             photos: [
-                'img/sample34.jpg', 'img/sample35.jpg', 'img/sample36.jpg'
+                'img/oosuna(1).jpg', 'img/oosuna(2).jpg', 'img/oosuna(3).jpg'
             ]
         },
         {
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: 'アルバイトが主だけど朝までゲームすることも',
             message: '学校の先生って実際どうなの？って思ってる人、なりたいけど迷ってる人是非声かけてね。人と話すのは好きだから全然関係ない話でも大歓迎だよー',
             photos: [
-                'img/sample40.jpg', 'img/sample41.jpg', 'img/sample42.jpg'
+                'img/endou(1).jpg', 'img/endou(2).jpg', 'img/endou(3).jpg'
             ]
         },
         {
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: '映画を見る',
             message: '選択肢がたくさんあると、自分がいつか迷った時にその選択肢たちが助けてくれます。色んな人と話すこと、聞くこと、聞いてもらうこと。夢に向かって頑張ろうとするみんなの力になれればと思います。いつまでもどこからでも、応援しています。',
             photos: [
-                'img/sample43.jpg', 'img/sample44.jpg', 'img/sample45.jpg'
+                'img/maruya(1).jpg', 'img/maruya(2).jpg', 'img/maruya(3).jpg'
             ]
         },
         {
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: 'バイトしたり、友達とお出かけしたり、お家でNetflixみたり、Switchしたり…',
             message: '10代のみなさんは何にでもなれます！これからたくさんのことを経験してください！！',
             photos: [
-                'img/sample49.jpg', 'img/sample50.jpg', 'img/sample51.jpg'
+                'img/nakamura(1).jpg', 'img/nakamura(2).jpg', 'img/nakamura(3).jpg'
             ]
         },
         {
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: 'フルートを吹いたり（吹奏楽やってます）、お出掛けして美味しいご飯を食べたりします！',
             message: '楽しみつつ学びの多い時間にします！一緒に頑張りましょう！！',
             photos: [
-                'img/sample55.jpg', 'img/sample56.jpg', 'img/sample57.jpg'
+                'img/satoukaho(1).jpg', 'img/satoukaho(2).jpg', 'img/satoukaho(3).jpg'
             ]
         },
         {
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: '休日は全部バイトです！！',
             message: 'ゲームでも、スポーツでも、勉強でも、音楽でも、なんでもいいので興味のあることにとことんチャレンジして、一生懸命にやってみてください。今はよくわからなくても、いつか必ずやってて良かった、と思える日が来ます！！！',
             photos: [
-                'img/sample58.jpg', 'img/sample59.jpg', 'img/sample60.jpg'
+                'img/tubaki2.jpg', 'img/tubaki3.jpg', 'img/tubaki4.jpg'
             ]
         },
         {
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
             leisure: '部活をしたりバイトしたり友達と会ったり...時間があったら何か予定を入れてしまいます',
             message: '勉強もしつつ楽しく色々なことをお話しできたらいいなと思ってます！',
             photos: [
-                'img/sample61.jpg', 'img/sample62.jpg', 'img/sample63.jpg'
+                'img/kikuchi(1).jpg', 'img/kikuchi(2).jpg', 'img/kikuchi(3).jpg'
             ]
         }
     ];
