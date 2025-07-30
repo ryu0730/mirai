@@ -300,7 +300,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderInstructorCards() {
         let html = '';
         lecturers.forEach(lecturer => {
-            html += `<div class="instructor-card" data-name="${lecturer.name}" data-university="${lecturer.university}"><p>${lecturer.name}</p><p>${lecturer.university}</p></div>`;
+            // 講師名の最初の文字を取得
+            const initial = lecturer.name.charAt(0);
+            html += `
+                <div class="instructor-card" data-name="${lecturer.name}" data-university="${lecturer.university}">
+                    <div class="profile-icon">
+                        <span class="icon-initial">${initial}</span>
+                    </div>
+                    <div class="card-content">
+                        <p class="lecturer-name">${lecturer.name}</p>
+                        <p class="lecturer-university">${lecturer.university}</p>
+                    </div>
+                </div>
+            `;
         });
         instructorsList.innerHTML = html;
     }
