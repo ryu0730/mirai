@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentY = 0;
         let isDragging = false;
         let dragDistance = 0;
+        let initialDirection = null; // 初期方向を記録
 
         // スライド位置を更新
         function updateSlidePosition(animated = true) {
@@ -73,12 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // タッチイベント（スマホ用） - 親コンテナにも追加
         aboutImage.addEventListener('touchstart', handleTouchStart, { passive: false });
         aboutImage.addEventListener('touchmove', handleTouchMove, { passive: false });
-        aboutImage.addEventListener('touchend', handleTouchEnd);
+        aboutImage.addEventListener('touchend', handleTouchEnd, { passive: false });
         
         // scroll-images要素にも追加（従来通り）
         scrollImages.addEventListener('touchstart', handleTouchStart, { passive: false });
         scrollImages.addEventListener('touchmove', handleTouchMove, { passive: false });
-        scrollImages.addEventListener('touchend', handleTouchEnd);
+        scrollImages.addEventListener('touchend', handleTouchEnd, { passive: false });
 
         // マウスホイールによるスクロールを無効化
         function preventWheelScroll(e) {
@@ -154,7 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
             startX = touch.clientX;
             startY = touch.clientY;
             dragDistance = 0;
+            initialDirection = null; // 方向をリセット
             isDragging = true;
+            
+            // タッチ開始時はpassiveにしない（preventDefault可能にする）
+            e.stopPropagation();
         }
 
         function handleTouchMove(e) {
@@ -166,16 +171,25 @@ document.addEventListener('DOMContentLoaded', () => {
             const diffX = currentX - startX;
             const diffY = currentY - startY;
             
-            // 縦スクロールの場合は無視
-            if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 20) {
-                isDragging = false;
-                updateSlidePosition(true); // 元の位置に戻す
-                return;
+            // 初期方向を一度だけ決定
+            if (initialDirection === null && (Math.abs(diffX) > 8 || Math.abs(diffY) > 8)) {
+                if (Math.abs(diffX) > Math.abs(diffY)) {
+                    initialDirection = 'horizontal';
+                } else {
+                    initialDirection = 'vertical';
+                }
             }
             
-            // 横方向のドラッグ処理
-            if (Math.abs(diffX) > 10) {
+            // 初期方向に基づいて処理を決定
+            if (initialDirection === 'vertical') {
+                // 縦スクロールの場合は横スライドを無効化
+                isDragging = false;
+                updateSlidePosition(true);
+                return;
+            } else if (initialDirection === 'horizontal') {
+                // 横スライドの場合は縦スクロールを無効化
                 e.preventDefault();
+                e.stopPropagation();
                 dragDistance = diffX;
                 updateDragPosition(dragDistance);
             }
@@ -184,10 +198,12 @@ document.addEventListener('DOMContentLoaded', () => {
         function handleTouchEnd(e) {
             if (!isDragging) return;
             
-            const threshold = 80; // 80px以上でスライド
+            const threshold = 60; // しきい値を少し下げて反応を良くする
             
             if (Math.abs(dragDistance) > threshold) {
+                // 横方向のスワイプが確定した場合のみpreventDefault
                 e.preventDefault();
+                e.stopPropagation();
                 
                 if (dragDistance > 0) {
                     // 右にスワイプ（前の画像）
