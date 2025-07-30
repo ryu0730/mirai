@@ -302,17 +302,33 @@ document.addEventListener('DOMContentLoaded', function() {
         lecturers.forEach(lecturer => {
             // 講師名の最初の文字を取得
             const initial = lecturer.name.charAt(0);
-            html += `
-                <div class="instructor-card" data-name="${lecturer.name}" data-university="${lecturer.university}">
-                    <div class="profile-icon">
-                        <span class="icon-initial">${initial}</span>
+            
+            // 高橋さんの場合は実際の写真を使用、それ以外は文字アイコン
+            if (lecturer.name === '高橋美百合') {
+                html += `
+                    <div class="instructor-card" data-name="${lecturer.name}" data-university="${lecturer.university}">
+                        <div class="profile-icon profile-photo">
+                            <img src="img/takahashi (2).jpg" alt="${lecturer.name}" class="profile-image">
+                        </div>
+                        <div class="card-content">
+                            <p class="lecturer-name">${lecturer.name}</p>
+                            <p class="lecturer-university">${lecturer.university}</p>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <p class="lecturer-name">${lecturer.name}</p>
-                        <p class="lecturer-university">${lecturer.university}</p>
+                `;
+            } else {
+                html += `
+                    <div class="instructor-card" data-name="${lecturer.name}" data-university="${lecturer.university}">
+                        <div class="profile-icon">
+                            <span class="icon-initial">${initial}</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="lecturer-name">${lecturer.name}</p>
+                            <p class="lecturer-university">${lecturer.university}</p>
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
+            }
         });
         instructorsList.innerHTML = html;
     }
