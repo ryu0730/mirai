@@ -30,13 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentY = 0;
         let isDragging = false;
 
-        // 自動スライド機能
-        function autoSlide() {
-            if (isAnimating) return;
-            
-            currentIndex = (currentIndex + 1) % totalImages;
-            updateSlidePosition();
-        }
+
 
         // スライド位置を更新
         function updateSlidePosition() {
@@ -136,9 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             isDragging = false;
         }
-
-        // 自動スライドを開始（5秒間隔）
-        setInterval(autoSlide, 5000);
 
         // 初期状態でカーソルスタイルを設定
         scrollImages.style.cursor = 'grab';
