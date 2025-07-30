@@ -37,8 +37,9 @@
     white-space: nowrap; /* 画像を横一列に並べる */
     margin-top: 20px; /* 上部に余白を追加 */
     position: relative;
-    touch-action: pan-y; /* 縦スクロールは許可、横スクロールは制御 */
+    touch-action: manipulation; /* より自然なタッチ操作を許可 */
     overscroll-behavior-x: none; /* 横スクロールのオーバースクロールを無効化 */
+    -webkit-overflow-scrolling: touch; /* iOSでの滑らかなスクロール */
 }
 
 .scroll-images {
