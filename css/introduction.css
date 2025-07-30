@@ -18,15 +18,16 @@ body {
     background-color: white;
     border: 1px solid #eee;
     border-radius: 15px; /* 角を少し丸く */
-    padding: 30px; /* パディングを拡大 */
+    padding: 25px; /* パディングを調整 */
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     width: 100%; /* 幅を100%に */
-    min-height: 120px; /* 最小高さを設定 */
+    min-height: 140px; /* 最小高さを調整 */
     display: flex;
     flex-direction: column;
     justify-content: center; /* 内容を中央寄せ */
+    align-items: center;
 }
 
 .instructor-card:hover {
@@ -34,22 +35,48 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* 講師カード内のテキストスタイル */
-.instructor-card p {
-    margin: 10px 0;
+/* プロフィールアイコンのスタイル */
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.instructor-card p:first-child {
-    font-size: 1.4rem; /* 講師名を少し大きく */
+.icon-initial {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* カードコンテンツのスタイル */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 講師名のスタイル */
+.lecturer-name {
+    font-size: 1.4rem;
     font-weight: bold;
     color: #333;
-    margin-bottom: 8px;
+    margin: 8px 0 !important;
 }
 
-.instructor-card p:last-child {
-    font-size: 1.1rem; /* 大学名も少し大きく */
+/* 大学名のスタイル */
+.lecturer-university {
+    font-size: 1.0rem;
     color: #666;
-    font-weight: normal;
+    margin: 5px 0 !important;
+    line-height: 1.4;
 }
 
 /* モーダルウィンドウ */
@@ -432,6 +459,25 @@ body {
         padding: 20px;
         min-height: 100px; /* モバイルでは最小高さを縮小 */
     }
+
+    /* モバイル用プロフィールアイコン */
+    .profile-icon {
+        width: 65px;
+        height: 65px;
+        margin-bottom: 12px;
+    }
+
+    .icon-initial {
+        font-size: 26px;
+    }
+
+    .lecturer-name {
+        font-size: 1.2rem;
+    }
+
+    .lecturer-university {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -443,6 +489,25 @@ body {
     .instructor-card {
         padding: 15px;
         min-height: 80px;
+    }
+
+    /* 小画面用プロフィールアイコン */
+    .profile-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 10px;
+    }
+
+    .icon-initial {
+        font-size: 22px;
+    }
+
+    .lecturer-name {
+        font-size: 1.1rem;
+    }
+
+    .lecturer-university {
+        font-size: 0.85rem;
     }
 }
 
