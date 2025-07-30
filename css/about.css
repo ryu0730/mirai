@@ -37,11 +37,17 @@
     white-space: nowrap; /* 画像を横一列に並べる */
     margin-top: 20px; /* 上部に余白を追加 */
     position: relative;
+    touch-action: pan-y; /* 縦スクロールは許可、横スクロールは制御 */
 }
 
 .scroll-images {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    will-change: transform; /* パフォーマンス向上 */
+    user-select: none; /* テキスト選択を無効化 */
+    -webkit-user-select: none; /* Safari用 */
+    -moz-user-select: none; /* Firefox用 */
+    -ms-user-select: none; /* IE用 */
 }
 
 .image-box {
@@ -51,6 +57,7 @@
     border-radius: 15px;
     margin-right: 40px; /* 画像間の余白 */
     flex-shrink: 0;
+    pointer-events: none; /* ドラッグ時の画像選択を防止 */
 }
 
 /* 特徴部分のスタイル */
