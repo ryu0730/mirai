@@ -143,7 +143,7 @@ const newsData = [
 // お知らせカードを生成する関数
 function createNewsCard(news) {
     return `
-        <div class="message-card news-card visible" data-id="${news.id}">
+        <div class="message-card news-card" data-id="${news.id}">
             <div class="message-content">
                 <div class="news-date">${news.date}</div>
                 <h3 class="news-title">${news.title}</h3>
@@ -178,25 +178,30 @@ function showNewsList() {
     // タイトルセクションを表示
     document.body.classList.remove('detail-view');
     
-    // 浮き上がり演出を適用
+    // ニュースカードにタイトルと同じタイミングでアニメーション効果を適用
     const cards = document.querySelectorAll('.news-card');
     cards.forEach((card, index) => {
-        // 初期状態を設定
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(50px)';
-        card.style.transition = 'opacity 1.2s ease-out, transform 1.2s ease-out';
-        
-        // 遅延して表示
+        // タイトルと同じタイミングで表示するため、少し遅延を追加
         setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, index * 200 + 300); // 300ms基本遅延 + カードごとに200ms追加
+            card.classList.add('visible');
+        }, 300 + (index * 150)); // 300ms基本遅延 + カードごとに150ms追加
     });
     
     // カードクリックイベントを追加
     document.querySelectorAll('.news-card').forEach(card => {
         card.addEventListener('click', () => {
             const newsId = parseInt(card.dataset.id);
+            console.log('カードクリック:', newsId); // デバッグログ
+            
+            // 現在のURLにパラメータを追加してページ状態を更新
+            const currentUrl = new URL(window.location);
+            currentUrl.searchParams.set('newsId', newsId);
+            // fromパラメータがない場合は'everyone'を設定
+            if (!currentUrl.searchParams.has('from')) {
+                currentUrl.searchParams.set('from', 'everyone');
+            }
+            window.history.pushState({}, '', currentUrl);
+            
             showNewsDetail(newsId);
         });
         
@@ -223,17 +228,72 @@ function showNewsList() {
 
 // お知らせ詳細を表示する関数
 function showNewsDetail(newsId) {
-    const news = newsData.find(item => item.id === newsId);
-    if (news) {
-        const container = document.getElementById('news-container');
-        container.innerHTML = createDetailPage(news);
-        
-        // タイトルセクションを非表示
-        document.body.classList.add('detail-view');
-        
-        // ページトップにスクロール
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    console.log('showNewsDetail called with ID:', newsId);
+    
+    const news = newsData.find(item => item.id === parseInt(newsId));
+    console.log('Found news object:', news);
+    
+    if (!news) {
+        console.error('News not found for ID:', newsId);
+        return;
     }
+
+    const newsDetail = document.getElementById('news-detail');
+    const newsContainer = document.getElementById('news-container');
+    
+    console.log('News detail element:', newsDetail);
+    console.log('News container element:', newsContainer);
+    
+    if (!newsDetail) {
+        console.error('News detail element not found');
+        return;
+    }
+
+    const detailHTML = `
+        <div class="detail-view fade-in-element">
+            <button class="back-btn" onclick="goBackToOrigin()">← 戻る</button>
+            <div class="detail-content">
+                <h2>${news.title}</h2>
+                <div class="news-meta">
+                    <span class="news-date">${news.date}</span>
+                    <span class="news-category">${news.category || 'お知らせ'}</span>
+                </div>
+                <div class="news-body">
+                    ${Array.isArray(news.content) ? news.content.map(paragraph => `<p>${paragraph}</p>`).join('') : `<div>${news.content}</div>`}
+                </div>
+            </div>
+        </div>
+    `;
+    
+    console.log('Generated HTML:', detailHTML);
+
+    // ニュース一覧を隠す
+    if (newsContainer) {
+        newsContainer.style.display = 'none';
+    }
+
+    // タイトルセクションを隠す
+    const titleSection = document.querySelector('.title');
+    if (titleSection) {
+        titleSection.style.display = 'none';
+    }
+
+    // 詳細を表示
+    newsDetail.innerHTML = detailHTML;
+    newsDetail.style.display = 'block';
+    
+    console.log('Detail view should now be visible');
+    
+    // ページトップにスクロール
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // フェードインアニメーションを適用
+    setTimeout(() => {
+        const detailView = newsDetail.querySelector('.detail-view');
+        if (detailView) {
+            detailView.classList.add('visible');
+        }
+    }, 100);
 }
 
 // 参照元に応じて適切なページに戻る関数
@@ -241,13 +301,43 @@ function goBackToOrigin() {
     const urlParams = new URLSearchParams(window.location.search);
     const from = urlParams.get('from');
     
+    console.log('goBackToOrigin called, from parameter:', from);
+    
     if (from === 'home') {
         // ホームページから来た場合はホームページに戻る
+        console.log('Redirecting to home page');
         window.location.href = 'index.html';
     } else {
-        // everyoneページから来た場合は一覧表示に戻る
-        showNewsList();
+        // everyoneページから来た場合、または参照元が不明な場合は一覧表示に戻る
+        console.log('Returning to news list');
+        hideNewsDetail();
+        // URLパラメータをクリア
+        const newUrl = window.location.pathname;
+        window.history.replaceState({}, document.title, newUrl);
     }
+}
+
+// ニュース詳細を隠す関数
+function hideNewsDetail() {
+    const newsDetail = document.getElementById('news-detail');
+    const newsContainer = document.getElementById('news-container');
+    const titleSection = document.querySelector('.title');
+    
+    if (newsDetail) {
+        newsDetail.style.display = 'none';
+    }
+    
+    if (newsContainer) {
+        newsContainer.style.display = 'block';
+    }
+
+    // タイトルセクションを再表示
+    if (titleSection) {
+        titleSection.style.display = 'block';
+    }
+    
+    // ページトップにスクロール
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // ページ読み込み時にお知らせ一覧を表示
