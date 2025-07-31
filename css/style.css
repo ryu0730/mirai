@@ -282,3 +282,35 @@ ul {
 .menu_active {
     right: 0;
 }
+
+/* 共通の浮き上がり演出 */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 各ページの主要コンテンツに適用 */
+.instructors .instructor-card,
+.content > *:not(.title_design),
+.features .feature,
+.title .title_design,
+.news-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.instructors .instructor-card.visible,
+.content > *:not(.title_design).visible,
+.features .feature.visible,
+.title .title_design.visible,
+.news-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

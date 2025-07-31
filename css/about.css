@@ -9,6 +9,18 @@
     margin-top: 130px; /* ヘッダー高さ + 余白 */
 }
 
+/* コンテンツの各要素に浮き上がり演出を適用 */
+.content > *:not(.title_design) {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.content > *:not(.title_design).visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* タイトルのスタイル */
 .about-title {
     font-size: 30px;
@@ -81,6 +93,14 @@
     /* border-bottom: 2px solid #eee; */
     border-bottom: 2px solid rgba(44, 62, 80, 0.1);
     padding-bottom: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.feature.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* スライドアニメーション用の初期スタイル */
