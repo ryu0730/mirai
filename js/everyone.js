@@ -178,6 +178,21 @@ function showNewsList() {
     // タイトルセクションを表示
     document.body.classList.remove('detail-view');
     
+    // 浮き上がり演出を適用
+    const cards = document.querySelectorAll('.news-card');
+    cards.forEach((card, index) => {
+        // 初期状態を設定
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(50px)';
+        card.style.transition = 'opacity 1.2s ease-out, transform 1.2s ease-out';
+        
+        // 遅延して表示
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 200 + 300); // 300ms基本遅延 + カードごとに200ms追加
+    });
+    
     // カードクリックイベントを追加
     document.querySelectorAll('.news-card').forEach(card => {
         card.addEventListener('click', () => {

@@ -21,13 +21,20 @@ body {
     padding: 25px; /* パディングを調整 */
     text-align: center;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 1.2s ease-out;
     width: 100%; /* 幅を100%に */
     min-height: 140px; /* 最小高さを調整 */
     display: flex;
     flex-direction: column;
     justify-content: center; /* 内容を中央寄せ */
     align-items: center;
+    opacity: 0; /* 初期状態で透明 */
+    transform: translateY(30px); /* 初期状態で下にずらす */
+}
+
+.instructor-card.visible {
+    opacity: 1; /* 表示時に不透明 */
+    transform: translateY(0); /* 元の位置に移動 */
 }
 
 .instructor-card:hover {
