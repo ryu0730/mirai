@@ -333,7 +333,47 @@ document.addEventListener('DOMContentLoaded', function() {
         instructorsList.innerHTML = html;
     }
     renderInstructorCards();
+    
+    // 講師カード生成後に表示アニメーションを適用
     const instructorCards = document.querySelectorAll('.instructor-card');
+    const isMobile = window.innerWidth <= 768;
+    
+    console.log('Introduction.js: DOMContentLoaded fired');
+    console.log('Introduction.js: Device type:', isMobile ? 'Mobile' : 'Desktop');
+    console.log('Introduction.js: Found instructor cards:', instructorCards.length);
+    
+    if (isMobile) {
+        // モバイルでは即座に全て表示（インラインスタイルで強制）
+        instructorCards.forEach((element, index) => {
+            element.classList.add('visible');
+            // インラインスタイルで強制的に表示
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+            element.style.visibility = 'visible';
+            element.style.display = 'flex';
+            element.style.transition = 'none'; // トランジションを無効化
+            console.log('Introduction.js: Mobile - Card', index, 'made visible immediately');
+        });
+        
+        // 追加の安全策：少し遅延してもう一度適用
+        setTimeout(() => {
+            instructorCards.forEach((element, index) => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+                element.style.visibility = 'visible';
+                element.style.display = 'flex';
+                console.log('Introduction.js: Mobile - Safety Card', index, 'forced visible');
+            });
+        }, 100);
+    } else {
+        // デスクトップでは順番に表示
+        instructorCards.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add('visible');
+                console.log('Introduction.js: Desktop - Card', index, 'made visible');
+            }, index * 150);
+        });
+    }
 
     function showLecturerDetails(index) {
         const lecturer = lecturers[index];
@@ -347,9 +387,18 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('lecturer-leisure').textContent = lecturer.leisure;
         document.getElementById('lecturer-proud').textContent = lecturer.proud;
         document.getElementById('lecturer-message').textContent = lecturer.message;
-        document.getElementById('lecturer-photo1').src = lecturer.photos[0];
-        document.getElementById('lecturer-photo2').src = lecturer.photos[1];
-        document.getElementById('lecturer-photo3').src = lecturer.photos[2];
+        
+        // 画像のsrcを設定し、表示する
+        const photo1 = document.getElementById('lecturer-photo1');
+        const photo2 = document.getElementById('lecturer-photo2');
+        const photo3 = document.getElementById('lecturer-photo3');
+        
+        photo1.src = lecturer.photos[0];
+        photo1.style.display = 'block';
+        photo2.src = lecturer.photos[1];
+        photo2.style.display = 'block';
+        photo3.src = lecturer.photos[2];
+        photo3.style.display = 'block';
 
         prevButton.style.display = index === 0 ? 'none' : 'flex';
         nextButton.style.display = index === instructorCards.length - 1 ? 'none' : 'flex';
