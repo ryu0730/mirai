@@ -96,13 +96,33 @@ function initFadeInAnimation() {
         element.style.transform = 'translateY(0)';
     });
     
-    // 講師カードも即座に表示（タイトルと同じタイミング）
-    const instructorCards = document.querySelectorAll('.instructor-card');
-    instructorCards.forEach(element => {
-        element.style.opacity = '1';
-        element.style.transform = 'translateY(0)';
-        element.classList.add('visible');
+    // 講師カードは introduction.js で処理するため、ここでは処理しない
+    // const instructorCards = document.querySelectorAll('.instructor-card');
+    // const isMobile = window.innerWidth <= 768;
+    
+    // console.log('Device type:', isMobile ? 'Mobile' : 'Desktop');
+    // console.log('Found instructor cards:', instructorCards.length);
+    
+    // 講師カードの処理はintroduction.jsで行うため、この部分は無効化
+    /*
+    instructorCards.forEach((element, index) => {
+        if (isMobile) {
+            // スマホでは遅延なしで即座に全て表示
+            element.classList.add('visible');
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+            element.style.visibility = 'visible';
+            element.style.display = 'flex';
+            console.log('Mobile: Card', index, 'made visible immediately');
+        } else {
+            // デスクトップでは少し遅延を入れて表示
+            setTimeout(() => {
+                element.classList.add('visible');
+                console.log('Desktop: Card', index, 'made visible');
+            }, index * 150); // 150msずつ遅延
+        }
     });
+    */
     
     // 対象となる要素のセレクタを定義（講師カードは除外）
     const selectors = [
@@ -121,7 +141,7 @@ function initFadeInAnimation() {
     
     if (elements.length === 0) return;
     
-    // Intersection Observerの設定
+    // Intersection Observerの設定（講師カード以外用）
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -135,18 +155,64 @@ function initFadeInAnimation() {
         });
     }, observerOptions);
     
-    // 各要素を監視対象に追加
+    // 各要素を監視対象に追加（講師カードは除外）
     elements.forEach((element, index) => {
-        // 遅延処理を追加（要素が順番に現れるように）
-        setTimeout(() => {
-            observer.observe(element);
-        }, index * 100); // 100msずつ遅延
+        // 講師カードでない要素のみObserverに追加
+        if (!element.classList.contains('instructor-card')) {
+            setTimeout(() => {
+                observer.observe(element);
+            }, index * 100); // 100msずつ遅延
+        }
     });
 }
 
 // ページ読み込み完了時に演出を初期化
 document.addEventListener('DOMContentLoaded', function() {
-    // 少し遅延してから演出を開始
-    setTimeout(initFadeInAnimation, 200);
+    console.log('DOMContentLoaded fired');
+    // モバイルでは遅延なし、デスクトップのみ少し遅延
+    if (window.innerWidth <= 768) {
+        initFadeInAnimation(); // モバイルは即座に実行
+    } else {
+        setTimeout(initFadeInAnimation, 200); // デスクトップのみ遅延
+    }
 });
+
+// スマホ用の追加の安全策は講師カード用のため削除
+// window.addEventListener('load', function() {
+//     console.log('Window load fired');
+//     // ページが完全に読み込まれた後、スマホで講師カードが表示されていない場合に強制表示
+//     if (window.innerWidth <= 768) {
+//         setTimeout(() => {
+//             const instructorCards = document.querySelectorAll('.instructor-card:not(.visible)');
+//             console.log('Safety check: Found', instructorCards.length, 'cards not yet visible');
+//             instructorCards.forEach((element, index) => {
+//                 setTimeout(() => {
+//                     element.classList.add('visible');
+//                     element.style.opacity = '1';
+//                     element.style.transform = 'translateY(0)';
+//                     element.style.visibility = 'visible';
+//                     console.log('Safety: Card', index, 'forced visible');
+//                 }, index * 30); // 30msに短縮
+//             });
+//         }, 500);
+//     }
+// });
+
+// 講師カード関連の処理は全てintroduction.jsで行うため、main.jsからは削除
+// 最終的な安全策（タッチイベント）も削除
+// document.addEventListener('touchstart', function() {
+//     console.log('Touch detected');
+//     const instructorCards = document.querySelectorAll('.instructor-card:not(.visible)');
+//     if (instructorCards.length > 0) {
+//         console.log('Touch fallback: Making', instructorCards.length, 'cards visible');
+//         instructorCards.forEach((element, index) => {
+//             setTimeout(() => {
+//                 element.classList.add('visible');
+//                 element.style.opacity = '1';
+//                 element.style.transform = 'translateY(0)';
+//                 element.style.visibility = 'visible';
+//             }, index * 20); // 20msに短縮してすぐに表示
+//         });
+//     }
+// }, { once: true }); // 一度だけ実行
 

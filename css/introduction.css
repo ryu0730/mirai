@@ -28,13 +28,40 @@ body {
     flex-direction: column;
     justify-content: center; /* 内容を中央寄せ */
     align-items: center;
+    /* デスクトップでは初期状態で透明、モバイルでは表示 */
     opacity: 0; /* 初期状態で透明 */
     transform: translateY(30px); /* 初期状態で下にずらす */
 }
 
-.instructor-card.visible {
-    opacity: 1; /* 表示時に不透明 */
-    transform: translateY(0); /* 元の位置に移動 */
+/* デスクトップ用の表示制御 */
+@media (min-width: 769px) {
+    .instructor-card {
+        opacity: 0; /* デスクトップでは初期状態で透明 */
+        transform: translateY(30px);
+    }
+    
+    .instructor-card.visible {
+        opacity: 1; /* 表示時に不透明 */
+        transform: translateY(0); /* 元の位置に移動 */
+    }
+}
+
+/* モバイル用の強制表示 */
+@media (max-width: 768px) {
+    .instructor-card {
+        opacity: 1 !important; /* モバイルでは最初から表示 */
+        transform: translateY(0) !important;
+        visibility: visible !important;
+        display: flex !important;
+        transition: none !important; /* トランジションを無効化 */
+    }
+    
+    .instructor-card.visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        visibility: visible !important;
+        display: flex !important;
+    }
 }
 
 .instructor-card:hover {
@@ -604,6 +631,8 @@ body {
         margin-top: 85px; /* スマホ用ヘッダー高さ80px + 最小余白5px */
     }
 }
+
+/* モバイル用の強制表示は上で定義済みのため削除 */
 
 
 
