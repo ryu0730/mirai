@@ -316,6 +316,19 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 `;
+
+            }else if (lecturer.name === '大砂百恵') {
+                html += `
+                    <div class="instructor-card" data-name="${lecturer.name}" data-university="${lecturer.university}">
+                        <div class="profile-icon profile-photo">
+                            <img src="img/oosuna.icon.jpg" alt="${lecturer.name}" class="profile-image">
+                        </div>
+                        <div class="card-content">
+                            <p class="lecturer-name">${lecturer.name}</p>
+                            <p class="lecturer-university">${lecturer.university}</p>
+                        </div>
+                    </div>
+                `;
             } else {
                 html += `
                     <div class="instructor-card" data-name="${lecturer.name}" data-university="${lecturer.university}">
