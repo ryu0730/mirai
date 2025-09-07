@@ -3,7 +3,7 @@
     justify-content: center;   /* 横方向中央 */
     align-items: center;       /* 縦方向中央 */
     height: 100px; /* 高さを縮小 */
-    margin-top: 130px; /* ヘッダー高さ + 余白 */
+    margin-top: 70px; /* もう少し上に調整 */
 }
 
 .title_design {
@@ -48,7 +48,7 @@
 @media screen and (max-width: 768px) {
     .title {
         height: 100px;
-        margin-top: 130px; /* 元の設定に戻す */
+        margin-top: 100px; /* タブレット用調整 */
         padding: 0 20px;
     }
     
@@ -66,7 +66,7 @@
 @media screen and (max-width: 480px) {
     .title {
         height: 80px;
-        margin-top: 85px; /* スマホ用ヘッダー高さ80px + 最小余白5px */
+        margin-top: 70px; /* スマホ用調整（さらに上に） */
         padding: 0 15px;
     }
     

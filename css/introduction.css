@@ -1,7 +1,7 @@
-/* ヘッダー対応 */
-body {
-    margin-top: 110px; /* ヘッダーの高さ分のマージンを追加 */
-}
+/* ヘッダー対応 - bodyのマージンは削除し、個別のコンテンツ要素で調整 */
+/* body {
+    margin-top: 150px;
+} */
 
 /* 講師カードのスタイル */
 .instructors {
@@ -10,6 +10,7 @@ body {
     gap: 30px;
     max-width: 1400px; /* コンテナの最大幅を拡大 */
     margin: 0 auto; /* 中央寄せ */
+    margin-top: 70px; /* もう少し上に調整 */
     padding: 20px 20px; /* 上にもパディングを追加 */
     justify-content: center; /* グリッド全体を中央寄せ */
 }
@@ -627,8 +628,8 @@ body {
 
 /* 480px以下でヘッダー高さ調整 */
 @media screen and (max-width: 480px) {
-    body {
-        margin-top: 85px; /* スマホ用ヘッダー高さ80px + 最小余白5px */
+    .instructors {
+        margin-top: 95px; /* スマホ用調整（さらに上に） */
     }
 }
 

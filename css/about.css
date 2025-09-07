@@ -6,7 +6,7 @@
     max-width: 1140px;
     margin: 0 auto;
     padding: 20px;
-    margin-top: 130px; /* ヘッダー高さ + 余白 */
+    margin-top: 70px; /* もう少し上に調整 */
 }
 
 /* コンテンツの各要素に浮き上がり演出を適用 */
@@ -205,7 +205,7 @@
     .content {
         width: 100%;
         padding: 10px;
-        margin-top: 130px; /* 元の設定に戻す */
+        margin-top: 100px; /* タブレット用調整 */
     }
     
     .about-title {
@@ -272,7 +272,7 @@
 @media screen and (max-width: 480px) {
     .content {
         padding: 5px;
-        margin-top: 85px; /* スマホ用ヘッダー高さ80px + 最小余白5px */
+        margin-top: 70px; /* スマホ用調整（さらに上に） */
     }
     
     .about-title {
