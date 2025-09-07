@@ -49,11 +49,87 @@
     transition: background-color 0.3s ease, color 0.3s ease;
     text-decoration: none;
     display: inline-block;
+    position: relative;
 }
 
 .nav_link:hover {
     background-color: #f0f0f0;
     color: #18bc9c;
+}
+
+/* アクティブ状態のスタイル */
+.nav_link.active {
+    background-color: #18bc9c;
+    color: white;
+    font-weight: bold;
+}
+
+.nav_link.active:hover {
+    background-color: #16a085;
+    color: white;
+}
+
+/* パンくずナビゲーション */
+.breadcrumb {
+    background-color: #f8f9fa;
+    padding: 12px 0;
+    margin-top: 110px; /* ヘッダーの高さ分 */
+    border-bottom: 1px solid #e9ecef;
+}
+
+.breadcrumb-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+    content: '>';
+    margin: 0 8px;
+    color: #6c757d;
+    font-size: 12px;
+}
+
+.breadcrumb-link {
+    color: #18bc9c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+    color: #16a085;
+    text-decoration: underline;
+}
+
+.breadcrumb-current {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* モバイル対応 */
+@media screen and (max-width: 768px) {
+    .breadcrumb-container {
+        padding: 0 20px;
+    }
+    
+    .breadcrumb-list {
+        font-size: 12px;
+    }
 }
 
 .responsive_btn {

@@ -4,7 +4,7 @@
 .content {
     width: 90%;
     max-width: 1140px;
-    margin: 80px auto 80px auto; /* 上のマージンを縮小 */
+    margin: 30px auto 80px auto; /* もう少し上に調整 */
     padding: 20px;
 }
 

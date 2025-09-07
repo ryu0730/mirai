@@ -278,6 +278,11 @@ function showNewsDetail(newsId) {
         titleSection.style.display = 'none';
     }
 
+    // パンくずナビに詳細ページを追加
+    if (typeof window.updateBreadcrumbForDetail === 'function') {
+        window.updateBreadcrumbForDetail(news.title);
+    }
+
     // 詳細を表示
     newsDetail.innerHTML = detailHTML;
     newsDetail.style.display = 'block';
@@ -311,6 +316,8 @@ function goBackToOrigin() {
         // everyoneページから来た場合、または参照元が不明な場合は一覧表示に戻る
         console.log('Returning to news list');
         hideNewsDetail();
+        // パンくずナビをリセット
+        resetBreadcrumb();
         // URLパラメータをクリア
         const newUrl = window.location.pathname;
         window.history.replaceState({}, document.title, newUrl);
